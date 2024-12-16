@@ -24,6 +24,7 @@ const ParticlesBackground = (props) => {
       setInit(true);
     });
   }, []);
+  console.log(init)
 
   const particlesLoaded = (container) => {
     console.log(container);

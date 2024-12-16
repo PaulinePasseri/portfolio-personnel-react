@@ -6,6 +6,7 @@
     "@tsparticles/all": "^3.7.1",
     "@tsparticles/react": "^3.0.0",
     "cra-template": "1.2.0",
+    "glitch-text": "^1.6.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.0.2",
