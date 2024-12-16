@@ -10,10 +10,6 @@ body, html, #root {
   font-style: normal;
 }
 
-li {
-  list-style: none;
-}
-
 #particles {
   position: absolute;
   top: 0;

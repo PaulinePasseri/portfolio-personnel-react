@@ -9,6 +9,7 @@
     "glitch-text": "^1.6.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-powerglitch": "^1.0.3",
     "react-router-dom": "^7.0.2",
     "react-scripts": "^5.0.1",
     "tsparticles": "^3.7.1",

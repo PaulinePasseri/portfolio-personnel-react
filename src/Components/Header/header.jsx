@@ -1,14 +1,16 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import MenuItem from './MenuItem'; 
 import './header.css';
-import { GlitchText } from 'glitch-text';
 
 export default function Header() {
     const menuItems = [
-        "Home",
-        "Compétences",
-        "Formations",
-        "Projets",
-        "Contact",
-        "Mon CV"
+        { text: "Pauline Passeri", path: "/" },
+        { text: "Projets", path: "/projets" },
+        { text: "Contact", path: "/contact" },
+        { text: "Compétences", path: "/competences" },
+        { text: "Formations", path: "/formations" },
+        { text: "Mon CV", path: "/cv" }
     ];
 
     return (
@@ -16,7 +18,9 @@ export default function Header() {
             <ul>
                 {menuItems.map((item, index) => (
                     <li key={index}>
-                        <GlitchText text={item} theme='purple'/>
+                        <Link to={item.path}>
+                            <MenuItem text={item.text} />
+                        </Link>
                     </li>
                 ))}
             </ul>

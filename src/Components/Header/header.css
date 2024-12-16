@@ -4,6 +4,7 @@ ul {
     justify-content: center;
     align-items: center;
     margin: 15px 0 0 0;
+    list-style: none;
 }
 
 nav { 
@@ -16,11 +17,28 @@ nav {
     top: 0;
     left: 0;
     z-index: 1000; 
+    border-radius: 8px; 
 }
 
 li {
     padding: 20px 15px;
     text-transform: uppercase;
-    font-size: 13px;
     cursor: pointer;
+    position: relative; 
+    overflow: hidden;
+    color: white; 
+    transition: color 0.3s ease; 
+}
+
+.glitch-effect {
+    font-size: 15px;
+    color: #d3d3e8;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+    text-decoration: none; /* Pour enlever le soulignement par défaut des liens */
+}
+
+.glitch-effect:hover {
+    color: #9a4ae5;
+    transform: scale(1.05);
 }
