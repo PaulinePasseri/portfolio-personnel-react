@@ -1,3 +1,8 @@
+@font-face {
+    font-family: Azedo;
+    src: url("../../Assets/Fonts/Azedo-Light.otf");
+}
+
 /* Navigation */
 nav { 
     max-width: 1440px;
@@ -12,6 +17,8 @@ nav {
     justify-content: space-between;
     align-items: center;
     box-shadow: 0px 3px 9px 0px black;
+    font-size: 24px;
+    font-family: Azedo;
 }
 
 ul {
@@ -25,7 +32,7 @@ ul {
 }
 
 li {
-    padding: 20px 15px;
+    padding: 20px 15px 28px 15px;
     text-transform: uppercase;
     cursor: pointer; 
     overflow: hidden;
@@ -35,7 +42,6 @@ li {
 
 /* Effet Glitch */
 .glitch-effect {
-    font-size: 15px;
     color: #d3d3e8;
     transition: color 0.3s ease, transform 0.3s ease;
     display: inline-block;
@@ -50,11 +56,12 @@ li {
 /* Bouton CV */
 button {
     border: none;
-    padding: 8px 13px;
     margin: 0 20px 0 0;
     border-radius: 20px;
     background: linear-gradient(90deg, rgba(91,22,156,1) 50%, rgba(154,74,229,1) 100%);
     color: white;
+    font-size: 12px;
+    padding: 8px 15px;
 }
 
 /* Logo */

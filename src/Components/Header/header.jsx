@@ -2,13 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import MenuItem from './MenuItem'; 
 import './header.css';
-import Logo from '../../Assets/pauline.png'
+import Logo from '../../Assets/logo.png'
 
 export default function Header() {
     const menuItems = [
         { text: "Accueil", path: "/" },
         { text: "Projets", path: "/projets" },
-        { text: "Compétences", path: "/competences" },
+        { text: "Competences", path: "/competences" },
         { text: "Formations", path: "/formations" },
         { text: "Contact", path: "/contact" }
     ];
