@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import MenuItem from './MenuItem'; 
 import './header.css';
 import Logo from '../../Assets/logo.png'
+import CV from '../../Assets/CV-PP.pdf'
 
 export default function Header() {
     const menuItems = [
@@ -25,7 +26,9 @@ export default function Header() {
                     </li>
                 ))}
             </ul>
-           <button className='btn'>MON CV</button> 
+            <a href={CV} target="_blank" rel="noopener noreferrer">
+                <button className='btn'>MON CV</button>
+            </a>  
         </nav>
     );
 }
