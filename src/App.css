@@ -3,6 +3,7 @@ body, html, #root {
   padding: 0;
   height: 100%;
   background-color: #100f10; 
+  /* background-image: url("../src/Assets/bg1.png"); */
   color: white;
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
