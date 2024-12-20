@@ -27,7 +27,7 @@ export default function Header() {
                 ))}
             </ul>
             <a href={CV} target="_blank" rel="noopener noreferrer">
-                <button className='btn'>MON CV</button>
+                <button className='btn-anim'>MON CV</button>
             </a>  
         </nav>
     );

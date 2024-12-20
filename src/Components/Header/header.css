@@ -53,21 +53,50 @@ li {
     transform: scale(1.05);
 }
 
-/* Bouton CV */
-button {
-    border: none;
-    margin: 0 20px 0 0;
-    border-radius: 20px;
-    background: linear-gradient(90deg, rgba(91,22,156,1) 50%, rgba(154,74,229,1) 100%);
-    color: white;
-    font-size: 12px;
-    padding: 8px 15px;
-    cursor: pointer;
-}
-
 /* Logo */
 .logo {
     width: 150px;
     margin-left: 20px;
     padding: 5px;
 }
+
+/* Bouton CV */
+.btn-anim {
+    overflow: hidden;
+    position: relative;
+    border: 2px solid #9a4ae5;
+    background-color: transparent;
+    margin: 0 20px 0 0;
+    border-radius: 20px;
+    color: white;
+    font-size: 12px;
+    padding: 8px 15px;
+    cursor: pointer;
+    
+    span {
+      z-index: 20;
+    }
+    
+    &:after {
+      background: #fff;
+      content: "";
+      height: 155px;
+      left: -75px;
+      opacity: .2;
+      position: absolute;
+      top: -50px;
+      transform: rotate(35deg);
+      transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+      width: 50px;
+      z-index: -10;
+    }
+}
+  
+.btn-anim:hover {
+    
+    &:after {
+      left: 120%;
+      transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+    }
+}
+  
