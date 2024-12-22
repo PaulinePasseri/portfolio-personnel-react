@@ -6,7 +6,27 @@ h1 {
 
 .hero-container {
     display: flex;
-    justify-content: center;
+    flex-direction: row;
     align-items: center;
     flex: 1 0 auto;
+    &__txt {
+        flex-direction: column;
+    }
+}
+
+.animated-moon {
+    width: 28rem;
+    height: 28rem;
+    border-radius: 50%;
+    background-image: url('../../Assets/2k_moon.jpg');
+    background-size: 200% 100%; /* Augmenté pour couvrir deux rotations */
+    animation: moonRotation 50s linear infinite;
+    box-shadow: inset -14px 11px 8px -7px #ffffff, 
+                inset 28px -28px 70px 60px rgba(0, 0, 0, 0.9), 
+                10px -8px 20px rgba(255, 255, 255, 0.3215686275);
+}
+
+@keyframes moonRotation {
+    0% { background-position: 0% 50%; }
+    100% { background-position: -200% 50%; }
 }
