@@ -1,0 +1,12 @@
+h1 {
+    font-family: Azedo-Bold;
+    font-size: 70px;
+    margin: 0;
+}
+
+.hero-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 0 auto;
+}

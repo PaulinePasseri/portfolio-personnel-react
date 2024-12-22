@@ -1,14 +1,29 @@
-body, html, #root {
+* {
   margin: 0;
   padding: 0;
-  height: 100%;
+  box-sizing: border-box;
+}
+
+body, html, #root {
   background-color: #100f10; 
-  /* background-image: url("../src/Assets/bg1.png"); */
+  /* background-image: url("../src/Assets/bg.jpg");
+  background-size: cover; */
   color: white;
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-weight: normal;
   font-style: normal;
+  height: 100%;
+}
+
+@font-face {
+  font-family: Azedo;
+  src: url("./Assets/Fonts/Azedo-Light.otf");
+}
+
+@font-face {
+  font-family: Azedo-Bold;
+  src: url("./Assets/Fonts/Azedo-Bold.otf")
 }
 
 #particles {

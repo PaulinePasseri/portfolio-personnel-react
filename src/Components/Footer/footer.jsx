@@ -1,5 +1,7 @@
+import './footer.css'
+
 export default function Footer() {
     return (
-        <p></p>
+        <div className='footer-container'></div>
     )
 }
