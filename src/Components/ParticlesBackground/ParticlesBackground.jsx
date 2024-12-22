@@ -47,7 +47,7 @@ const ParticlesBackground = (props) => {
             }
           },
           "color": {
-            "value": "#a56ecc"
+            "value": "#ffffff"
           },
           "shape": {
             "type": "polygon",

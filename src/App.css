@@ -39,3 +39,7 @@ body, html, #root {
   position: relative;
   z-index: 2;
 }
+
+.text-highlight {
+  color: #9a4ae5;
+}
