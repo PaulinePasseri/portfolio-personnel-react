@@ -8,153 +8,107 @@ import { loadSlim } from "@tsparticles/slim"; // if you are going to use `loadSl
 
 
 const ParticlesBackground = (props) => {
-
   const [init, setInit] = useState(false);
-  // this should be run only once per application lifetime
+
   useEffect(() => {
     initParticlesEngine(async (engine) => {
-      // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
-      // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-      // starting from v2 you can add only the features you need reducing the bundle size
-      //await loadAll(engine);
-      //await loadFull(engine);
       await loadSlim(engine);
-      //await loadBasic(engine);
     }).then(() => {
       setInit(true);
     });
   }, []);
-  console.log(init)
 
   const particlesLoaded = (container) => {
     console.log(container);
   };
 
-
   const options = useMemo(
     () => ({
-        "background": {
-          "color": {
-            "value": "transparent"
+      background: {
+        color: {
+          value: "transparent"
+        }
+      },
+      particles: {
+        number: {
+          value: 250,
+          density: {
+            enable: true,
+            value_area: 800
           }
         },
-        "particles": {
-          "number": {
-            "value": 250,
-            "density": {
-              "enable": true,
-              "value_area": 800
-            }
-          },
-          "color": {
-            "value": "#ffffff"
-          },
-          "shape": {
-            "type": "polygon",
-            "stroke": {
-              "width": 0,
-              "color": "#000000"
-            },
-            "polygon": {
-              "nb_sides": 5
-            },
-            "image": {
-              "src": "",
-              "width": 100,
-              "height": 100
-            }
-          },
-          "opacity": {
-            "value": 0.8,
-            "random": true,
-            "anim": {
-              "enable": true,
-              "speed": 1,
-              "opacity_min": 0,
-              "sync": false
-            }
-          },
-          "size": {
-            "value": { min: 1, max: 3 },
-            "random": {
-                enable: true,
-                minimumValue: 1
-              },
-            "anim": {
-              "enable": false,
-              "speed": 6,
-              "size_min": 0.3,
-              "sync": false
-            }
-          },
-          "line_linked": {
-            "enable": false,
-            "distance": 150,
-            "color": "#ffffff",
-            "opacity": 0.4,
-            "width": 1
-          },
-          "move": {
-            "enable": true,
-            "speed": 1,
-            "direction": "none",
-            "random": true,
-            "straight": false,
-            "out_mode": "out",
-            "bounce": false,
-            "attract": {
-              "enable": false,
-              "rotateX": 600,
-              "rotateY": 600
-            }
+        color: {
+          value: "#ffffff"
+        },
+        shape: {
+          type: "polygon",
+          polygon: {
+            nb_sides: 5
           }
         },
-        "interactivity": {
-          "detect_on": "window",
-          "events": {
-            "onhover": {
-              "enable": true,
-              "mode": "bubble"
-            },
-            "onclick": {
-              "enable": true,
-              "mode": "repulse"
-            },
-            "resize": true
-          },
-          "modes": {
-            "grab": {
-              "distance": 400,
-              "line_linked": {
-                "opacity": 1
-              }
-            },
-            "bubble": {
-              "distance": 250,
-              "size": 0,
-              "duration": 2,
-              "opacity": 0,
-              "speed": 3
-            },
-            "repulse": {
-              "distance": 400,
-              "duration": 0.4
-            },
-            "push": {
-              "particles_nb": 4
-            },
-            "remove": {
-              "particles_nb": 2
-            }
+        opacity: {
+          value: 0.8,
+          random: true,
+          anim: {
+            enable: true,
+            speed: 1,
+            opacity_min: 0,
+            sync: false
           }
         },
-        "retina_detect": true
-      }),
-    [],
+        size: {
+          value: { min: 1, max: 3 },
+          random: {
+            enable: true,
+            minimumValue: 1
+          }
+        },
+        move: {
+          enable: true,
+          speed: 1,
+          direction: "none",
+          random: true,
+          straight: false,
+          out_mode: "out"
+        }
+      },
+      interactivity: {
+        detectsOn: "window",
+        events: {
+          onHover: {
+            enable: true,
+            mode: "bubble"
+          },
+          onClick: {
+            enable: true,
+            mode: "repulse"
+          },
+          resize: true
+        },
+        modes: {
+          bubble: {
+            distance: 250,
+            size: 0,
+            duration: 2,
+            opacity: 0,
+            speed: 3
+          },
+          repulse: {
+            distance: 400,
+            duration: 0.4
+          }
+        }
+      },
+      retina_detect: true
+    }),
+    []
   );
 
+  if (init) {
+    return <Particles id={props.id} particlesLoaded={particlesLoaded} options={options} />;
+  }
 
-  return <Particles id={props.id} init={particlesLoaded} options={options} />; 
+  return null;
 };
 
 export default ParticlesBackground;
