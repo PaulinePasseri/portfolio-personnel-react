@@ -2,4 +2,26 @@
     height: 40px;
     display: flex;
     flex: 0 0 auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-container p {
+    font-size: 13px;
+    margin-right: 10px;
+}
+
+.icons a {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+i {
+    color: white;
+    transition: color 0.3s ease;
+}
+
+i:hover {
+    color: #9a4ae5;
 }

@@ -2,6 +2,6 @@ import './projects.css'
 
 export default function Projects() {
     return (
-        <p></p>
+        <div className='sub-container'></div>
     )
 }
