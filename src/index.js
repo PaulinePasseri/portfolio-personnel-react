@@ -4,6 +4,10 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css'
 import App from './App'
 import Home from './Pages/Home/home'
+import Projects from './Pages/Projects/projects'
+import Skills from './Pages/Skills/skills'
+import Formations from './Pages/Formations/formations'
+import Contact from './Pages/Contact/contact'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -11,6 +15,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/projets" element={<Projects/>}/>
+          <Route path="/competences" element={<Skills/>}/>
+          <Route path="/formations" element={<Formations/>}/>
+          <Route path="/contact" element={<Contact/>}/>
         </Routes>
       </Router>
     </App>
