@@ -22,23 +22,3 @@ h1 {
 .hero-txt strong {
     font-size: 30px;
 }
-
-.animated-moon {
-    position: absolute;
-    right: 180px;
-    width: 30rem;
-    height: 30rem;
-    border-radius: 50%;
-    background-image: url('../../Assets/2k_moon.jpg');
-    background-size: 200% 100%; /* Augmenté pour couvrir deux rotations */
-    animation: moonRotation 50s linear infinite;
-    box-shadow: inset -14px 11px 8px -7px #ffffff, 
-                inset 28px -28px 70px 60px rgba(0, 0, 0, 0.9), 
-                10px -8px 20px rgba(255, 255, 255, 0.3215686275);
-}
-
-@keyframes moonRotation {
-    0% { background-position: 0% 50%; }
-    100% { background-position: -200% 50%; }
-}
-

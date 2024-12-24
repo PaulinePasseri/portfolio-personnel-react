@@ -1,14 +1,15 @@
-import './hero.css'
+import './hero.css';
+import AnimatedPlanet from '../AnimatedPlanet/animatedplanet';
+import Moon from '../../Assets/2k_moon.jpg'
 
 export default function Hero() {
-    return(
-        <section className='hero-container'>
-            <div className='hero-txt'>
-                <h1>Bonjour<br/>Je suis Pauline Passeri</h1>
-                <strong className='text-highlight'>Web developer</strong>
+    return (
+        <section className="hero-container">
+            <div className="hero-txt">
+                <h1>Bonjour<br />Je suis Pauline Passeri</h1>
+                <strong className="text-highlight">Web developer</strong>
             </div>
-            <div className='animated-moon'></div>
+            <AnimatedPlanet image={Moon} />
         </section>
-        
-    )
+    );
 }
