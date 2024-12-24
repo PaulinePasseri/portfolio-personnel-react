@@ -52,6 +52,14 @@ body, html, #root {
   flex-direction: column;
 }
 
+.sub-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex: 1 0 auto;
+  position: relative;
+}
+
 .header-container {
   margin: 10px 0;
   width: 100%;

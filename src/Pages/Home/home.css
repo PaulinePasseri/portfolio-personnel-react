@@ -1,0 +1,16 @@
+h1 {
+    font-family: Azedo-Bold;
+    font-size: 70px;
+    margin: 0 0 20px 0;
+}
+
+.home-txt {
+    position: absolute;
+    flex-direction: column;
+    left: 200px;
+    z-index: 1000;
+}
+
+.home-txt strong {
+    font-size: 30px;
+}

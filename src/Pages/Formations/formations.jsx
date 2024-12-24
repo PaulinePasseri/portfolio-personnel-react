@@ -1,14 +1,11 @@
-import Header from "../../Components/Header/header"
-import Footer from "../../Components/Footer/footer"
+import AnimatedPlanet from "../../Components/AnimatedPlanet/animatedplanet"
+import Neptune from '../../Assets/Dh_neptune_texture.webp'
 import './formations.css'
 
 export default function Formations() {
     return (
-        <div className="main-container">
-            <div className="header-container">
-                <Header/>
-            </div>
-            <Footer/>
+        <div className="sub-container">
+            <AnimatedPlanet image={Neptune} position={{right:'180px'}} />
         </div>
     )
 }

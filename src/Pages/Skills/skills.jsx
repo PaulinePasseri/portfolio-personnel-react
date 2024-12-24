@@ -1,14 +1,11 @@
-import Header from "../../Components/Header/header"
-import Footer from "../../Components/Footer/footer"
+import AnimatedPlanet from "../../Components/AnimatedPlanet/animatedplanet"
+import Earth from '../../Assets/Earth_Texture_Full.webp'
 import './skills.css'
 
 export default function Skills() {
     return (
-        <div className="main-container">
-            <div className="header-container">
-                <Header/>
-            </div>
-            <Footer/>
+        <div className="sub-container">
+            <AnimatedPlanet image={Earth} position={{right:'180px'}} />
         </div>
     )
 }
