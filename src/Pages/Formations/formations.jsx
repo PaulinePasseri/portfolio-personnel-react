@@ -4,7 +4,7 @@ import './formations.css'
 
 export default function Formations() {
     return (
-        <div className="sub-container">
+        <div className="formations-container">
             <AnimatedPlanet image={Neptune} position={{right:'180px'}} />
         </div>
     )

@@ -14,3 +14,10 @@ h1 {
 .home-txt strong {
     font-size: 30px;
 }
+
+.home-container {
+    display: flex;
+    align-items: center;
+    flex: 1 0 auto;
+    position: relative;
+}

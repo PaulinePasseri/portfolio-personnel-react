@@ -4,7 +4,7 @@ import './skills.css'
 
 export default function Skills() {
     return (
-        <div className="sub-container">
+        <div className="skills-container">
             <AnimatedPlanet image={Earth} position={{right:'180px'}} />
         </div>
     )

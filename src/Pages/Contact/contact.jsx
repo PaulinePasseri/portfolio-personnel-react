@@ -4,7 +4,7 @@ import './contact.css'
 
 export default function Contact() {
     return (
-        <div className="sub-container">
+        <div className="contact-container">
             <AnimatedPlanet image={Mars} position={{right:'180px'}} />
         </div>
     )

@@ -1,0 +1,17 @@
+.projects-container {
+    flex: 1 0 auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.sub-container {
+    flex: 1 0 auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}

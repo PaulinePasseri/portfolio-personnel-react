@@ -6,8 +6,6 @@
 
 body, html, #root {
   background-color: #100f10; 
-  /* background-image: url("../src/Assets/bg.jpg");
-  background-size: cover; */
   color: white;
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
@@ -50,14 +48,7 @@ body, html, #root {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-}
-
-.sub-container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  flex: 1 0 auto;
-  position: relative;
+  overflow: hidden;
 }
 
 .header-container {
