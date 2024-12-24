@@ -37,12 +37,18 @@ li {
     transition: color 0.3s ease; 
 }
 
+li.active .glitch-effect {
+    color: #9a4ae5; 
+    font-weight: bold; 
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
 /* Effet Glitch */
 .glitch-effect {
     color: #d3d3e8;
     transition: color 0.3s ease, transform 0.3s ease;
     display: inline-block;
-    text-decoration: none; /* Pour enlever le soulignement par défaut des liens */
+    text-decoration: none; 
 }
 
 .glitch-effect:hover {

@@ -1,10 +1,10 @@
 import './animatedplanet.css';
 
-export default function AnimatedPlanet({ image }) {
+export default function AnimatedPlanet({ image, position={} }) {
     return (
         <div 
             className="animated-planet" 
-            style={{ backgroundImage: `url(${image})` }}
+            style={{ backgroundImage: `url(${image})`, ...position}}
         ></div>
     );
 }

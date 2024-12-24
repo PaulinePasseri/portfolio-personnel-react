@@ -9,7 +9,7 @@ export default function Hero() {
                 <h1>Bonjour<br />Je suis Pauline Passeri</h1>
                 <strong className="text-highlight">Web developer</strong>
             </div>
-            <AnimatedPlanet image={Moon} />
+            <AnimatedPlanet image={Moon} position={{right:'180px'}} />
         </section>
     );
 }
