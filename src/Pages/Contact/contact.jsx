@@ -1,11 +1,10 @@
-import AnimatedPlanet from "../../Components/AnimatedPlanet/animatedplanet"
-import Mars from '../../Assets/Mars_NASA_4k.webp'
+import Satellite from '../../Assets/satellite.png'
 import './contact.css'
 
 export default function Contact() {
     return (
         <div className="contact-container">
-            <AnimatedPlanet image={Mars} position={{right:'180px'}} />
+            <img src={Satellite} alt="Satellite"></img>
         </div>
     )
 }
