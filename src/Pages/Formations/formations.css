@@ -4,3 +4,26 @@
     flex: 1 0 auto;
     position: relative;
 }
+
+.rocket-img {
+    height: 800px;
+    position: absolute;
+    right: 550px;
+}
+
+.left-container {
+    position: absolute;
+    left: 50px;
+}
+
+.right-container {
+    position: absolute;
+    right: 50px;
+}
+
+.left-container h2, .right-container h2 {
+    text-align: center;
+    font-family: Azedo-bold;
+    font-size: 34px;
+}
+

@@ -3,4 +3,19 @@
     align-items: center;
     flex: 1 0 auto;
     position: relative;
+    flex-direction: row;
+}
+
+.skills-container img {
+    height: 600px;
+    animation: rotate 40s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }

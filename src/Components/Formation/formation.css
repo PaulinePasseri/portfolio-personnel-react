@@ -1,0 +1,42 @@
+.formation-container {
+    background-color: rgba(44, 44, 44, 0.226); 
+    backdrop-filter: blur(5px); 
+    -webkit-backdrop-filter: blur(5px); 
+    width: 400px;
+    height: 100px;
+    border-radius: 8px;
+    box-shadow: 0px 3px 9px 0px black;
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    gap: 10px; 
+    padding: 10px; 
+    margin: 50px;
+    transition: all 0.3s ease;
+}
+
+.formation-logo {
+    height: 50px;
+    width: 50px;
+    object-fit: contain;
+    border-radius: 8px;
+    background-color: white;
+    margin-right: 10px;
+
+}
+
+.formation-text {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+}
+
+.formation-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.formation-link:hover .formation-logo {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}

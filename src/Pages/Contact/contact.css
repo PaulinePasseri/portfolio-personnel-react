@@ -4,3 +4,7 @@
     flex: 1 0 auto;
     position: relative;
 }
+
+.contact-container img {
+    height: 800px;
+}
