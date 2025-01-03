@@ -1,18 +1,18 @@
 .contact-container {
     display: flex;
+    flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     flex: 1 0 auto;
-    position: relative;
     padding: 0 50px;
 }
 
 .satellite-img {
-    height: 800px;
+    width: 700px;
 }
 
 .contact-form {
-    width: 400px;
+    width: 450px;
     padding: 20px;
     background-color: rgba(44, 44, 44, 0.226); 
     backdrop-filter: blur(5px); 
