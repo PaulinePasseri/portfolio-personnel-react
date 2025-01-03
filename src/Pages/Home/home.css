@@ -9,6 +9,13 @@ h1 {
     flex-direction: column;
     left: 200px;
     z-index: 1000;
+    transform: translateX(-100%); 
+    transition: opacity 1s ease, transform 1s ease; 
+}
+
+.home-txt.animate {
+    opacity: 1; 
+    transform: translateY(0); 
 }
 
 .home-txt strong {
@@ -20,4 +27,15 @@ h1 {
     align-items: center;
     flex: 1 0 auto;
     position: relative;
+}
+
+.animated-planet {
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.animated-planet.animate {
+    opacity: 1;
+    transform: translateX(0);
 }
