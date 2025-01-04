@@ -1,71 +1,12 @@
 .project-button {
-    width: 400px;
-    height: 400px;
-    font-size:30px;
-    color: #fff;
-    background: none;
+    background-color: transparent;
     border: none;
-    border-radius: 50%; 
-    position: relative;
-    z-index: 0;
-    transition: .3s;
     cursor: pointer;
+    width: 100%;
+    height: 100%;
     display: flex;
-}
-.project-button:before {
-content: "";
-position: absolute;
-inset: -8px;
-padding: 10px;
-border-radius: 50%; 
-background: conic-gradient(
-        #9a4ae5 ,
-        #0000 30deg 120deg,
-        white 150deg 180deg,
-        #0000 210deg 300deg,
-        #9a4ae5 330deg
-    );
--webkit-mask:
-    linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
--webkit-mask-composite: xor;
-        mask-composite: intersect
-}
-.project-button:after {
-content: "";
-position: absolute;
-inset: -100px;
-background:
-    radial-gradient(300px at left  100px top 100px,#9a4ae5 100%,#0000),
-    radial-gradient(300px at right 100px bottom 100px,white 100%,#0000);
-filter: blur(120px);
-opacity: .5;
-}
-
-.project-button:before,
-.project-button:after {
-transition:.5s, 99999s 99999s transform;
-}
-.project-button:hover {
-box-shadow: 0 0 0 1px #666;
-}
-
-.project-button:hover:before,
-.project-button:hover:after {
-transform: rotate(36000deg);
-transition: .5s,600s linear transform;
-}
-.project-button:before {
-background-color: #222;
-    border: 2px solid #333;
-}
-
-.project-button > img {
-    border-radius: 50%; 
-    position: relative;
-    top: 0; 
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover;
-    opacity: 0.9;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: center; /* Aligne chaque projet au centre */
+    flex: 0 0 100%; /* Chaque projet occupe toute la largeur */
 }

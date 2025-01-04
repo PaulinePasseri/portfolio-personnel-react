@@ -12,21 +12,21 @@
     animation: rotate 40s linear infinite;
 }
 
-/* @keyframes rotate {
+.skills-container h2 {
+    font-family: Azedo-bold;
+    font-size: 34px;
+    margin-bottom: 30px;
+}
+
+@keyframes rotate {
     from {
         transform: rotate(0deg);
     }
     to {
         transform: rotate(360deg);
     }
-} */
+}
 
-.technical-skills, .soft-skills {
-    background-color: rgba(44, 44, 44, 0.226); 
-    backdrop-filter: blur(5px); 
-    -webkit-backdrop-filter: blur(5px); 
-    box-shadow: 0px 3px 9px 0px black;
-    border-radius: 8px;
-    width: 300px;
-    height: 500px;
+.soft-skills-container, .technical-skills-container {
+    min-height: 500px;
 }

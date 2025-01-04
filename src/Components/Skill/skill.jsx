@@ -1,7 +1,9 @@
 import './skill.css'
 
-export default function Skill() {
+export default function Skill({skill}) {
     return(
-        <div></div>
+        <div className='skill-container'>
+            <p>{skill}</p>
+        </div>
     )
 }
