@@ -1,44 +1,32 @@
-import React, { useRef } from 'react';
-import './projects.css';
-import Project from '../../Components/Project/project';
-import Projet1 from '../../Assets/logo.png';
+import React, { useRef, useEffect } from 'react';
+import './projects.css'
+import Project from '../../Components/Project/project'
+import Projet1 from '../../Assets/logo.png'
 
 export default function Projects() {
     const containerRef = useRef(null);
 
-    const scrollLeft = () => {
-        if (containerRef.current) {
-            containerRef.current.scrollBy({ left: -containerRef.current.offsetWidth, behavior: 'smooth' });
+    useEffect(() => {
+        const container = containerRef.current;
+        if (container) {
+            const handleWheel = (e) => {
+                e.preventDefault();
+                // Multiplier deltaY par un facteur pour accélérer le défilement
+                container.scrollLeft += e.deltaY * 8; // Vous pouvez ajuster ce multiplicateur
+            };
+            container.addEventListener('wheel', handleWheel, { passive: false });
+            return () => container.removeEventListener('wheel', handleWheel);
         }
-    };
-
-    const scrollRight = () => {
-        if (containerRef.current) {
-            containerRef.current.scrollBy({ left: containerRef.current.offsetWidth, behavior: 'smooth' });
-        }
-    };
-
-    const handleWheel = (event) => {
-        if (containerRef.current) {
-            event.preventDefault(); // Empêche le défilement vertical par défaut
-            containerRef.current.scrollBy({ left: event.deltaY, behavior: 'smooth' });
-        }
-    };
+    }, []);
 
     return (
-        <div className="projects-outer-container">
-            <button onClick={scrollLeft} className="scroll-button">◀</button>
-            <div
-                ref={containerRef}
-                className="projects-container"
-                onWheel={handleWheel} // Gestionnaire de la molette
-            >
-                <Project image={Projet1} />
-                <Project image={Projet1} />
-                <Project image={Projet1} />
-                <Project image={Projet1} />
+        <div className='projects-outer-container'>
+            <div className='projects-container' ref={containerRef}>
+                <Project image={Projet1}/>
+                <Project image={Projet1}/>
+                <Project image={Projet1}/>
+                <Project image={Projet1}/>
             </div>
-            <button onClick={scrollRight} className="scroll-button">▶</button>
         </div>
-    );
+    )
 }

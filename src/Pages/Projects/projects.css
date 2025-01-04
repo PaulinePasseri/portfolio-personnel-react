@@ -1,45 +1,25 @@
 .projects-outer-container {
     flex: 1 0 auto;
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    overflow: hidden;
     width: 100%;
-    overflow: hidden; /* Cache les débordements */
 }
 
 .projects-container {
     display: flex;
-    flex-direction: row;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
     width: 100%;
-    overflow-x: auto; /* Active le défilement horizontal */
-    scroll-snap-type: x mandatory; /* Active le snap horizontal */
-    scroll-behavior: smooth; /* Défilement fluide */
-    -ms-overflow-style: none; /* Masque la barre de défilement sur Internet Explorer et Edge */
-    scrollbar-width: none; /* Masque la barre de défilement sur Firefox */
+    height: 100%;
 }
 
 .projects-container::-webkit-scrollbar {
-    display: none; /* Masque la barre de défilement sur Chrome, Safari et Edge */
+    display: none;
 }
 
-.scroll-button {
-    background: rgba(0, 0, 0, 0.5);
-    border: none;
-    color: white;
-    cursor: pointer;
-    font-size: 1.5rem;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1;
-    padding: 10px;
-}
-
-.scroll-button:first-of-type {
-    left: 10px;
-}
-
-.scroll-button:last-of-type {
-    right: 10px;
+.projects-container > * {
+    flex: 0 0 100%;
+    width: 100%;
 }
