@@ -7,9 +7,15 @@
     justify-content: space-around;
 }
 
-.skills-container img {
+.astronaut-img {
     height: 600px;
     animation: rotate 40s linear infinite;
+    opacity: 0; 
+    transition: opacity 1s ease;
+}
+
+.astronaut-img.animate {
+    opacity: 1; 
 }
 
 .skills-container h2 {
@@ -29,4 +35,50 @@
 
 .soft-skills-container, .technical-skills-container {
     min-height: 500px;
+    max-width: 200px;
+}
+
+.technical-skills {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.logo-img {
+    height: 80px;
+    margin: 10px;
+}
+
+@keyframes slideFromTopLeft {
+    from {
+        transform: translate(-100%, -100%);
+        opacity: 0;
+    }
+    to {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideFromBottomRight {
+    from {
+        transform: translate(100%, 100%);
+        opacity: 0;
+    }
+    to {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+
+.technical-skills-container {
+    animation: slideFromTopLeft 1s ease-out forwards;
+    opacity: 0;
+}
+
+.soft-skills-container {
+    animation: slideFromBottomRight 1s ease-out forwards;
+    opacity: 0;
 }
