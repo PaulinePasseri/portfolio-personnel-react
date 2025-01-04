@@ -2,11 +2,11 @@
     background-color: transparent;
     border: none;
     cursor: pointer;
-    width: 100%;
+    width: 50%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     scroll-snap-align: center; /* Aligne chaque projet au centre */
-    flex: 0 0 100%; /* Chaque projet occupe toute la largeur */
+    flex: 0 0 50%; /* Chaque projet occupe toute la largeur */
 }

@@ -1,9 +1,18 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import './projects.css'
 import Project from '../../Components/Project/project'
 import Projet1 from '../../Assets/logo.png'
 
 export default function Projects() {
+    const [isVisible, setIsVisible] = useState(false);
+    const location = useLocation();
+
+    useEffect(() => {
+        setIsVisible(false); 
+        setTimeout(() => setIsVisible(true), 50); 
+    }, [location]);
+
     const containerRef = useRef(null);
 
     useEffect(() => {
@@ -12,7 +21,7 @@ export default function Projects() {
             const handleWheel = (e) => {
                 e.preventDefault();
                 // Multiplier deltaY par un facteur pour accélérer le défilement
-                container.scrollLeft += e.deltaY * 8; // Vous pouvez ajuster ce multiplicateur
+                container.scrollLeft += e.deltaY * 2.5; // Vous pouvez ajuster ce multiplicateur
             };
             container.addEventListener('wheel', handleWheel, { passive: false });
             return () => container.removeEventListener('wheel', handleWheel);
@@ -20,7 +29,7 @@ export default function Projects() {
     }, []);
 
     return (
-        <div className='projects-outer-container'>
+        <div className={`projects-outer-container ${isVisible ? 'animate' : ''}`}>
             <div className='projects-container' ref={containerRef}>
                 <Project image={Projet1}/>
                 <Project image={Projet1}/>

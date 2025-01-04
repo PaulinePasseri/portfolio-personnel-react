@@ -3,6 +3,14 @@
     position: relative;
     overflow: hidden;
     width: 100%;
+    opacity: 0; 
+    transform: translateX(100%); 
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.projects-outer-container.animate {
+    opacity: 1; 
+    transform: translateX(0); 
 }
 
 .projects-container {
