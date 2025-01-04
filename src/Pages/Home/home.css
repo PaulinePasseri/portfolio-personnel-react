@@ -5,6 +5,7 @@ h1 {
 }
 
 .home-txt {
+    opacity: 0;
     position: absolute;
     flex-direction: column;
     left: 200px;
@@ -15,7 +16,7 @@ h1 {
 
 .home-txt.animate {
     opacity: 1; 
-    transform: translateY(0); 
+    transform: translateX(0); 
 }
 
 .home-txt strong {

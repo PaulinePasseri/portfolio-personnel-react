@@ -1,8 +1,17 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Satellite from '../../Assets/satellite.png'
 import './contact.css'
+import { useLocation } from 'react-router-dom';
 
 export default function Contact() {
+    const [isVisible, setIsVisible] = useState(false);
+            const location = useLocation();
+        
+            useEffect(() => {
+                setIsVisible(false); 
+                setTimeout(() => setIsVisible(true), 50); 
+            }, [location]);
+
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -21,8 +30,7 @@ export default function Contact() {
 
     return (
         <div className="contact-container">
-            <img src={Satellite} alt="Satellite" className="satellite-img"></img>
-            <form className="contact-form" onSubmit={handleSubmit}>
+            <form className={`contact-form ${isVisible ? 'animate' : ''}`} onSubmit={handleSubmit}>
                 <h2>Entrons en contact</h2>
                 <input 
                     type="text" 
@@ -49,6 +57,7 @@ export default function Contact() {
                 ></textarea>
                 <button type="submit">Envoyer</button>
             </form>
+            <img src={Satellite} alt="Satellite" className={`satellite-img ${isVisible ? 'animate' : ''}`}></img>
         </div>
     )
 }
