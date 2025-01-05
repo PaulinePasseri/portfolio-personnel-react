@@ -9,4 +9,9 @@
     align-items: center;
     scroll-snap-align: center; /* Aligne chaque projet au centre */
     flex: 0 0 50%; /* Chaque projet occupe toute la largeur */
+    color: white;
+}
+
+h3:after {
+    content: ' \007B';
 }
