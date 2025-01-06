@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import './projects.css'
 import Project from '../../Components/Project/project'
-import Projet1 from '../../Assets/logo.png'
+import Projet1 from '../../Assets//Projects/projet1.png'
 
 export default function Projects() {
     const [isVisible, setIsVisible] = useState(false);
@@ -31,7 +31,7 @@ export default function Projects() {
     return (
         <div className={`projects-outer-container ${isVisible ? 'animate' : ''}`}>
             <div className='projects-container' ref={containerRef}>
-                <Project image={Projet1}/>
+                <Project title='[001]' image={Projet1} link='https://paulinepasseri.github.io/quizzpokemon/' description='Quizz Pokemon' competences='JAVASCRIPT'/>
                 <Project image={Projet1}/>
                 <Project image={Projet1}/>
                 <Project image={Projet1}/>

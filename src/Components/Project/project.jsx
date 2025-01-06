@@ -1,20 +1,19 @@
 import './project.css';
 
-export default function Project({ image, title, description, competences }) {
+export default function Project({ link, image, title, description, competences }) {
     return (
-        <button className='project-button'>
+        <a href={link} className='project-button'target="_blank" rel="noopener noreferrer">
             <h2>{title}</h2>
-            <div className='project-img'>
-                <img src={image} alt="projet" />
-            </div>
+            <img className='project-img' src={image} alt="projet" />
             <div className='trapezoid-1'></div>
             <div className='trapezoid-2'></div>
             <div className='project-txt'>
-                <h3>[ DESCRIPTION ] </h3>
+                <h3 className='project-title'>[ DESCRIPTION ] </h3>
                 <p>{description}</p>
-                <h3>[ COMPETENCES ]</h3>
+                <h3 className='project-title'>[ COMPETENCES ]</h3>
                 <p>/ {competences}</p>
             </div>
-        </button>
+        </a>
     );
 }
+
