@@ -7,30 +7,55 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    scroll-snap-align: center; /* Aligne chaque projet au centre */
-    flex: 0 0 50%; /* Chaque projet occupe toute la largeur */
+    scroll-snap-align: center; 
+    flex: 0 0 50%; 
     color: white;
-    position: relative;
+    text-transform: uppercase;
 }
 
-a {
+.project-link {
     text-decoration: none;
+    color: inherit;
 }
 
+.project-title {
+    font-family: "Chakra Petch", serif;
+    font-weight: 500;
+    margin-bottom: 5px;
+    font-size: 20px;
+}
 
+.project-content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
 
-.project-title:after {
-    content: ' \007B';
+.project-subtitle {
+    font-family: "Chakra Petch", serif;
+    font-weight: 500;
+    margin-bottom: 10px;
+    font-size: 16px;
+    
+}
+
+.project-subtitle:after {
+    content: '\00A0\00A0\00A0\007B';
 }
 
 .project-txt {
     font-family: "Chakra Petch", serif;
-    font-weight: 200;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.project-txt p {
+    margin-bottom: 10px;
 }
 
 .project-img {
-    width: 350px;
-    height: 220px;
+    width: 450px;
+    height: 320px;
     object-fit: cover;
     border: 10px solid transparent;
     margin-right: 20px;

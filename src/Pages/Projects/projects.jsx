@@ -32,9 +32,9 @@ export default function Projects() {
         <div className={`projects-outer-container ${isVisible ? 'animate' : ''}`}>
             <div className='projects-container' ref={containerRef}>
                 <Project title='[001]' image={Projet1} link='https://paulinepasseri.github.io/quizzpokemon/' description='Quizz Pokemon' competences='JAVASCRIPT'/>
-                <Project image={Projet1}/>
-                <Project image={Projet1}/>
-                <Project image={Projet1}/>
+                <Project title='[002]' image={Projet1}/>
+                <Project title='[003]' image={Projet1}/>
+                <Project title='[004]' image={Projet1}/>
             </div>
         </div>
     )
