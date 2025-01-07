@@ -54,8 +54,8 @@
 }
 
 .project-img {
-    width: 450px;
-    height: 320px;
+    width: 400px;
+    height: 280px;
     object-fit: cover;
     border: 10px solid transparent;
     margin-right: 20px;

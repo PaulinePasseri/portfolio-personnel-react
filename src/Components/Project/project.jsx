@@ -1,8 +1,8 @@
 import './project.css';
 
-export default function Project({ link, image, title, description, competences }) {
+export default function Project({ className, link, image, title, description, competences }) {
     return (
-        <div className='project-button'>
+        <div className={`project-button ${className}`}>
             <a className='project-link' href={link} target="_blank" rel="noopener noreferrer">
                 <h2 className='project-title'>{title}</h2>
                 <div className='project-content'>

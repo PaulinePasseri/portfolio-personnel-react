@@ -53,9 +53,11 @@ export default function Header() {
     // Gestion du scroll de la souris
     useEffect(() => {
         const handleWheel = (e) => {
-            const direction = e.deltaY > 0 ? 1 : -1; // deltaY > 0 : Scroll bas, deltaY < 0 : Scroll haut
+            const sensitivityThreshold = 30;
+            const direction = e.deltaY > sensitivityThreshold ? 1 : e.deltaY < -sensitivityThreshold ? -1 : 0; // deltaY > 0 : Scroll bas, deltaY < 0 : Scroll haut
             const newIndex = (activeIndex + direction + menuItems.length) % menuItems.length;
             setActiveIndex(newIndex);
+            if (direction === 0) return;
 
             const currentItem = menuItems[newIndex];
             if (currentItem.isExternal) {
