@@ -80,3 +80,8 @@
     box-shadow: 0 4px 8px rgba(154, 74, 229, 0.5);
 }
 
+.confirmation-message {
+    text-align: center;
+    transition: ALL 0.3s ease; 
+}
+

@@ -8,6 +8,16 @@ export default function Contact() {
     const location = useLocation();
     const formRef = useRef(null);
 
+    // État pour gérer les données du formulaire
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        message: ''
+    });
+
+    // État pour le message de confirmation
+    const [confirmationMessage, setConfirmationMessage] = useState('');
+
     useEffect(() => {
         setIsVisible(false);
         setTimeout(() => {
@@ -18,12 +28,6 @@ export default function Contact() {
         }, 50);
     }, [location]);
 
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        message: ''
-    });
-
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
@@ -31,59 +35,72 @@ export default function Contact() {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log('Formulaire soumis:', formData);
+
+        // Afficher le message de confirmation
+        setConfirmationMessage('Votre message a été envoyé avec succès !');
+
+        // Vider les champs du formulaire
+        setFormData({
+            name: '',
+            email: '',
+            message: ''
+        });
+
+        // Optionnel : Retirer le message après un certain temps
+        setTimeout(() => {
+            setConfirmationMessage('');
+        }, 5000); // Masquer le message après 5 secondes
     };
 
-    const handleKeyDown = (e) => {
-        if (e.key === 'Tab') {
-            const focusableElements = formRef.current.querySelectorAll('input, textarea, button');
-            const currentIndex = Array.from(focusableElements).indexOf(document.activeElement);
-            let nextIndex;
-
-            if (e.shiftKey) { // Shift + Tab
-                nextIndex = (currentIndex - 1 + focusableElements.length) % focusableElements.length;
-            } else { // Tab
-                nextIndex = (currentIndex + 1) % focusableElements.length;
-            }
-
-            // Focus on the next element
-            focusableElements[nextIndex].focus();
-            e.preventDefault(); // Prevent the default tab behavior
+    const handleLastTab = (e) => {
+        if (e.key === 'Tab' && !e.shiftKey) {
+            e.preventDefault();
+            // Renvoyer le focus au menu
+            const menu = document.querySelector('nav a');
+            if (menu) menu.focus();
         }
     };
 
     return (
         <div className="contact-container">
-            <form 
+            <form
                 ref={formRef}
-                className={`contact-form ${isVisible ? 'animate' : ''}`} 
+                className={`contact-form ${isVisible ? 'animate' : ''}`}
                 onSubmit={handleSubmit}
-                onKeyDown={handleKeyDown}
             >
                 <h2>Entrons en contact</h2>
-                <input 
-                    type="text" 
-                    name="name" 
+                <input
+                    type="text"
+                    name="name"
                     placeholder="Votre nom"
                     value={formData.name}
                     onChange={handleChange}
                     required
                 />
-                <input 
-                    type="email" 
-                    name="email" 
+                <input
+                    type="email"
+                    name="email"
                     placeholder="Votre email"
                     value={formData.email}
                     onChange={handleChange}
                     required
                 />
-                <textarea 
-                    name="message" 
+                <textarea
+                    name="message"
                     placeholder="Votre message"
                     value={formData.message}
                     onChange={handleChange}
                     required
                 ></textarea>
-                <button type="submit">Envoyer</button>
+                <button
+                    type="submit"
+                    onKeyDown={handleLastTab}
+                >
+                    Envoyer
+                </button>
+
+                {/* Affichage du message de confirmation */}
+                {confirmationMessage && <p className="confirmation-message">{confirmationMessage}</p>}
             </form>
             <img src={Satellite} alt="Satellite" className={`satellite-img ${isVisible ? 'animate' : ''}`} />
         </div>

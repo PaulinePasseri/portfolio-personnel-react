@@ -18,6 +18,10 @@ nav {
     flex: 0 0 auto;
 }
 
+a {
+    outline: none;
+}
+
 ul {
     display: flex;
     flex-direction: row;
@@ -80,7 +84,6 @@ li.active .glitch-effect {
     font-family: Azedo;
     font-size: 16px;
     transition: all 0.3s ease;
-    outline: none;
     
     span {
       z-index: 20;
@@ -131,10 +134,5 @@ li.active .glitch-effect {
 .btn-anim:focus, 
 .btn-anim.active {
     background-color: #9a4ae5;
-}
-
-.btn-anim:focus, 
-.btn-anim.active {
-    outline: none;
     box-shadow: 0 0 0 2px rgba(154, 74, 229, 0.2);
 }
