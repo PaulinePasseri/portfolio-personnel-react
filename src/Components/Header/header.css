@@ -80,6 +80,7 @@ li.active .glitch-effect {
     font-family: Azedo;
     font-size: 16px;
     transition: all 0.3s ease;
+    outline: none;
     
     span {
       z-index: 20;

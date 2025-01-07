@@ -44,7 +44,7 @@ body, html, #root {
 
 .main-container {
   height: 100vh;
-  width: 1440px;
+  max-width: 1440px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
