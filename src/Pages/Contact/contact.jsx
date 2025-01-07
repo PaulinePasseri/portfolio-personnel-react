@@ -1,16 +1,22 @@
-import React, { useEffect, useState } from 'react';
-import Satellite from '../../Assets/satellite.png'
-import './contact.css'
+import React, { useEffect, useState, useRef } from 'react';
+import Satellite from '../../Assets/satellite.png';
+import './contact.css';
 import { useLocation } from 'react-router-dom';
 
 export default function Contact() {
     const [isVisible, setIsVisible] = useState(false);
-            const location = useLocation();
-        
-            useEffect(() => {
-                setIsVisible(false); 
-                setTimeout(() => setIsVisible(true), 50); 
-            }, [location]);
+    const location = useLocation();
+    const formRef = useRef(null);
+
+    useEffect(() => {
+        setIsVisible(false);
+        setTimeout(() => {
+            setIsVisible(true);
+            if (formRef.current) {
+                formRef.current.querySelector('input[name="name"]').focus();
+            }
+        }, 50);
+    }, [location]);
 
     const [formData, setFormData] = useState({
         name: '',
@@ -19,18 +25,40 @@ export default function Contact() {
     });
 
     const handleChange = (e) => {
-        setFormData({...formData, [e.target.name]: e.target.value});
+        setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Logique formulaire
         console.log('Formulaire soumis:', formData);
+    };
+
+    const handleKeyDown = (e) => {
+        if (e.key === 'Tab') {
+            const focusableElements = formRef.current.querySelectorAll('input, textarea, button');
+            const currentIndex = Array.from(focusableElements).indexOf(document.activeElement);
+            let nextIndex;
+
+            if (e.shiftKey) { // Shift + Tab
+                nextIndex = (currentIndex - 1 + focusableElements.length) % focusableElements.length;
+            } else { // Tab
+                nextIndex = (currentIndex + 1) % focusableElements.length;
+            }
+
+            // Focus on the next element
+            focusableElements[nextIndex].focus();
+            e.preventDefault(); // Prevent the default tab behavior
+        }
     };
 
     return (
         <div className="contact-container">
-            <form className={`contact-form ${isVisible ? 'animate' : ''}`} onSubmit={handleSubmit}>
+            <form 
+                ref={formRef}
+                className={`contact-form ${isVisible ? 'animate' : ''}`} 
+                onSubmit={handleSubmit}
+                onKeyDown={handleKeyDown}
+            >
                 <h2>Entrons en contact</h2>
                 <input 
                     type="text" 
@@ -57,7 +85,7 @@ export default function Contact() {
                 ></textarea>
                 <button type="submit">Envoyer</button>
             </form>
-            <img src={Satellite} alt="Satellite" className={`satellite-img ${isVisible ? 'animate' : ''}`}></img>
+            <img src={Satellite} alt="Satellite" className={`satellite-img ${isVisible ? 'animate' : ''}`} />
         </div>
-    )
+    );
 }

@@ -13,7 +13,6 @@ nav {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    
     font-size: 24px;
     font-family: Azedo;
     flex: 0 0 auto;
@@ -74,8 +73,13 @@ li.active .glitch-effect {
     border-radius: 20px;
     color: white;
     font-size: 12px;
-    padding: 8px 15px;
+    padding: 4px 15px 8px 15px;
     cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    font-family: Azedo;
+    font-size: 16px;
+    transition: all 0.3s ease;
     
     span {
       z-index: 20;
@@ -103,4 +107,33 @@ li.active .glitch-effect {
       transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
     }
 }
-  
+
+.btn-anim::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(154, 74, 229, 0.1);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+    z-index: -1;
+}
+ 
+.btn-anim:focus::before, 
+.btn-anim.active::before {
+    transform: scaleX(1);
+}
+ 
+.btn-anim:focus, 
+.btn-anim.active {
+    background-color: #9a4ae5;
+}
+
+.btn-anim:focus, 
+.btn-anim.active {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(154, 74, 229, 0.2);
+}
