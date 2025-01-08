@@ -2,7 +2,11 @@ import React, { useEffect, useState, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import './projects.css';
 import Project from '../../Components/Project/project';
-import Projet1 from '../../Assets/Projects/projet1.png';
+import Projet1 from '../../Assets/Projects/projet-sophiebluel.png';
+import Projet2 from '../../Assets/Projects/projet-ninacarducci.png';
+import Projet3 from '../../Assets/Projects/projet-argentbank.png';
+import Projet4 from '../../Assets/Projects/projet-kasa.png';
+
 
 export default function Projects() {
     const [isVisible, setIsVisible] = useState(false);
@@ -81,8 +85,8 @@ export default function Projects() {
             <Project
                 title="[001]"
                 image={Projet1}
-                link="https://paulinepasseri.github.io/quizzpokemon/"
-                description="Quizz Pokemon"
+                link="https://github.com/PaulinePasseri/P6.git"
+                description="Création d'une page web dynamique pour une architecte"
                 competences="JAVASCRIPT"
                 className={`project project-1 ${isVisible ? 'animate' : ''}`}
                 ref={(el) => (projectRefs.current[0] = el)}
@@ -91,10 +95,10 @@ export default function Projects() {
 
             <Project
                 title="[002]"
-                image={Projet1}
-                link="#"
-                description="Description du projet 2"
-                competences="HTML, CSS"
+                image={Projet2}
+                link="https://github.com/PaulinePasseri/ninacarducci.git"
+                description="Optimisation du référencement d'un site de photographe"
+                competences="SEO, ACCESSIBILITE"
                 className={`project project-2 ${isVisible ? 'animate' : ''}`}
                 ref={(el) => (projectRefs.current[1] = el)}
                 tabIndex={0} 
@@ -102,10 +106,10 @@ export default function Projects() {
 
             <Project
                 title="[003]"
-                image={Projet1}
-                link="#"
-                description="Description du projet 3"
-                competences="React"
+                image={Projet3}
+                link="https://github.com/PaulinePasseri/argent-bank.git"
+                description="Application bancaire"
+                competences="REACT, REDUX TOOLKIT"
                 className={`project project-3 ${isVisible ? 'animate' : ''}`}
                 ref={(el) => (projectRefs.current[2] = el)}
                 tabIndex={0} 
@@ -113,10 +117,10 @@ export default function Projects() {
 
             <Project
                 title="[004]"
-                image={Projet1}
-                link="#"
-                description="Description du projet 4"
-                competences="Node.js"
+                image={Projet4}
+                link="https://github.com/PaulinePasseri/kasa.git"
+                description="Application de location immobilière"
+                competences="CSS, REACT"
                 className={`project project-4 ${isVisible ? 'animate' : ''}`}
                 ref={(el) => (projectRefs.current[3] = el)}
                 tabIndex={0} 

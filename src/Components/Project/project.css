@@ -40,14 +40,10 @@
 
 .project-subtitle {
     font-family: "Chakra Petch", serif;
-    font-weight: 500;
+    font-weight: 700;
     margin-bottom: 10px;
     font-size: 16px;
     
-}
-
-.project-subtitle:after {
-    content: '\00A0\00A0\00A0\007B';
 }
 
 .project-txt {
@@ -58,6 +54,7 @@
 
 .project-txt p {
     margin-bottom: 10px;
+    font-size: 14px;
 }
 
 .project-img {
