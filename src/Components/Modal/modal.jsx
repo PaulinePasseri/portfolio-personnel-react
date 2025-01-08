@@ -11,7 +11,7 @@ export default function Modal({ isOpen, onClose, project }) {
                     &times;
                 </button>
                 <p>{project.description}</p>
-                <p><strong>Compétences :</strong> {project.competences}</p>
+                <p><strong>Technologies :</strong> {project.competences}</p>
                 <a 
                     href={project.githubLink} 
                     target="_blank" 

@@ -1,88 +1,141 @@
+/* Fond de la modale */
 .modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%; 
-    height: 100%; 
-    background: rgba(0, 0, 0, 0.8); 
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Ombre sombre avec transparence */
     display: flex;
     justify-content: center; 
     align-items: center; 
-    z-index: 1000; 
+    z-index: 1000;
+    backdrop-filter: blur(10px); /* Flou pour l'arrière-plan */
+    -webkit-backdrop-filter: blur(10px);
+    opacity: 0; /* Modale invisible au départ pour la transition */
+    animation: fadeIn 0.3s ease-out forwards; /* Animation d'ouverture */
 }
 
+/* Animation fade-in */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Animation fade-out pour fermeture */
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Modale avec animation de glissement */
 .modal-content {
-    background-color: rgba(255, 252, 252, 0.226); 
-    backdrop-filter: blur(5px); 
-    -webkit-backdrop-filter: blur(5px); 
-    box-shadow: 0px 3px 9px 0px black;
+    background: linear-gradient(135deg, rgba(20, 20, 20, 0.9), rgba(50, 50, 50, 0.9)); /* Dégradé avec un contraste accru */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     padding: 20px;
-    border-radius: 10px;
-    width: 80%; 
+    border-radius: 12px;
+    width: 80%;
     max-width: 600px;
-    max-height: 80%; 
-    overflow-y: auto; 
-    position: relative;
+    max-height: 80%;
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: "Montserrat";
+    opacity: 0; /* Initialement invisible */
+    transform: scale(0.8); /* Initialement réduit pour l'animation */
+    animation: slideIn 0.5s ease-out forwards; /* Animation d'apparition */
+
+    /* Ajout d'une bordure lumineuse subtile */
+    box-shadow: 0 0 15px rgba(154, 74, 229, 0.4), 
+                0 0 30px rgba(154, 74, 229, 0.3); /* Effet néon doux */
 }
 
+/* Animation de glissement (ouverture) */
+@keyframes slideIn {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Animation inverse pour la fermeture */
+@keyframes slideOut {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+}
+
+/* Fermeture du bouton */
 .modal-close {
     position: absolute;
     top: 10px;
     right: 10px;
     background: transparent;
     border: none;
-    font-size: 1.5rem;
-    color: #ffffff; 
+    font-size: 35px;
+    color: #ffffff;
+    transition: all 0.3s ease;
 }
 
+.modal-close:hover {
+    font-size: 40px;
+}
+
+/* Image dans la modale */
 .modal-content img {
     width: 500px;
-    border-radius: 10px;
+    border-radius: 12px;
+    margin-top: 20px;
 }
 
-.modal-content p {
-    padding-bottom: 10px;
-}
-
+/* Liens avec effet */
 .modal-content a {
     color: inherit;
     text-decoration: none;
     padding: 10px;
     border-radius: 8px;
     border-style: none;
-    box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
-    margin-bottom: 10px;
-    background-color: rgba(161, 75, 161, 0.616);
-    transition: all 0.3s ease;
+    background-color: #9a4ae5;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 10px;
+    display: inline-block;
 }
 
 .modal-content a:hover {
-    background-color: rgba(83, 38, 83, 0.616);
+    background-color: #b46bf8;
+    transform: translateY(-2px); /* Effet de soulèvement */
 }
 
-/* Custom scrollbar */
 .modal-content::-webkit-scrollbar {
-    width: 8px; /* Largeur de la barre de défilement */
+    width: 4px; /* Largeur fine */
 }
 
 .modal-content::-webkit-scrollbar-thumb {
-    background-color: rgba(255, 252, 252, 0.5); /* Couleur du curseur de la barre de défilement */
-    border-radius: 10px; /* Arrondir les coins du curseur */
-    border: 3px solid rgba(0, 0, 0, 0.2); /* Créer un léger contour autour du curseur */
+    background-color: rgba(255, 252, 252, 0.3); /* Curseur discret */
+    border-radius: 5px; /* Coins arrondis */
 }
 
 .modal-content::-webkit-scrollbar-track {
-    background-color: rgba(0, 0, 0, 0.1); /* Couleur de la piste de la barre de défilement */
-    border-radius: 10px; /* Arrondir les coins de la piste */
+    background-color: rgba(0, 0, 0, 0.6); /* Couleur de la piste */
+    border-radius: 5px; /* Coins arrondis */
+    margin: 20px 0; /* Réduit la hauteur visible de la piste */
 }
-
-/* Optionnel : pour une meilleure visibilité du contenu lorsque le défilement est actif */
-.modal-content::-webkit-scrollbar-corner {
-    background-color: rgba(0, 0, 0, 0.1);
-}
-
-
-

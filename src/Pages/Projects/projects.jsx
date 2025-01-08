@@ -7,6 +7,10 @@ import Projet1 from '../../Assets/Projects/projet-sophiebluel.png';
 import Projet2 from '../../Assets/Projects/projet-ninacarducci.png';
 import Projet3 from '../../Assets/Projects/projet-724events.png';
 import Projet4 from '../../Assets/Projects/projet-kasa.png';
+import Cover1 from '../../Assets/Projects/projet-sophiebluel2.png';
+import Cover2 from '../../Assets/Projects/projet-ninacarducci2.png';
+import Cover3 from '../../Assets/Projects/projet-724events2.png';
+import Cover4 from '../../Assets/Projects/projet-kasa2.png';
 
 export default function Projects() {
     const [isVisible, setIsVisible] = useState(false);
@@ -20,30 +24,34 @@ export default function Projects() {
         {
             title: "[001]",
             image: Projet1,
+            cover: Cover1,
             description: "Création d'une page web dynamique pour une architecte",
             competences: "JAVASCRIPT",
-            githubLink: "#",
+            githubLink: "https://github.com/PaulinePasseri/P6.git",
         },
         {
             title: "[002]",
             image: Projet2,
+            cover: Cover2,
             description: "Optimisation du référencement d'un site de photographe",
             competences: "SEO, ACCESSIBILITE",
-            githubLink: "#",
+            githubLink: "https://github.com/PaulinePasseri/ninacarducci.git",
         },
         {
             title: "[003]",
             image: Projet3,
+            cover: Cover3,
             description: "Debug d'un site d'événementiel",
             competences: "REACT",
-            githubLink: "#",
+            githubLink: "https://github.com/PaulinePasseri/Debuggez-une-application-React.JS-main.git",
         },
         {
             title: "[004]",
             image: Projet4,
+            cover: Cover4,
             description: "Application de location immobilière",
-            competences: "CSS, REACT",
-            githubLink: "#",
+            competences: "SASS, REACT",
+            githubLink: "https://github.com/PaulinePasseri/kasa.git",
         },
     ];
 
@@ -108,7 +116,7 @@ export default function Projects() {
                     <Project
                         key={index}
                         title={project.title}
-                        image={project.image}
+                        image={project.cover}
                         description={project.description}
                         competences={project.competences}
                         className={`project project-${index + 1} ${isVisible ? 'animate' : ''}`}

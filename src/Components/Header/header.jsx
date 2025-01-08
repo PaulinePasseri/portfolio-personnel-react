@@ -27,16 +27,16 @@ export default function Header() {
     const handleNavigation = useCallback((direction) => {
         const newIndex = (activeIndex + direction + menuItems.length) % menuItems.length;
         setActiveIndex(newIndex);
+    
+        // Ne navigue pas automatiquement sur un lien externe
         if (!menuItems[newIndex].isExternal) {
             navigate(menuItems[newIndex].path);
-        } else {
-            window.open(menuItems[newIndex].path, '_blank', 'noopener,noreferrer');
         }
     }, [activeIndex, navigate, menuItems]);
-
+    
     const handleKeyDown = useCallback((e) => {
         const isMenuFocused = document.activeElement.closest('nav');
-
+    
         if (isMenuFocused) {
             if (e.key === 'Tab') {
                 e.preventDefault();
