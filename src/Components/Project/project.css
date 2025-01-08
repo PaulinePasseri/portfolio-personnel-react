@@ -1,34 +1,40 @@
 .project-button {
     background-color: transparent;
     border: none;
-    cursor: pointer;
-    width: 50%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     scroll-snap-align: center; 
     color: white;
     text-transform: uppercase;
-    outline: none;
-}
-
-/* Pour l'image d'un projet lorsque le projet est focusé */
-.project-button:focus .project-img {
-    width: 410px; 
-    height: 290px; 
-    box-shadow: 0px 7px 15px 0px black;
-}
-
-.project-link {
-    text-decoration: none;
-    color: inherit;
+    min-width: 500px;
+    margin-right: 20px;
+    position: relative;
 }
 
 .project-title {
     font-family: "Chakra Petch", serif;
-    font-weight: 500;
+    font-weight: 600;
     margin-bottom: 5px;
-    font-size: 20px;
+    font-size: 14px;
+    position: absolute;
+    top: -20px;
+    left: 5px;
+}
+
+.project-img {
+    width: 350px;
+    height: 220px;
+    object-fit: cover;
+    border: 10px solid transparent;
+    margin-right: 20px;
+    border-radius: 8px;
+    background-color: rgba(44, 44, 44, 0.226); 
+    backdrop-filter: blur(5px); 
+    -webkit-backdrop-filter: blur(5px); 
+    box-shadow: 0px 3px 9px 0px black;
+    transition: all 0.4s ease;
 }
 
 .project-content {
@@ -37,6 +43,7 @@
     align-items: flex-end;
     max-width: 580px;
 }
+
 
 .project-subtitle {
     font-family: "Chakra Petch", serif;
@@ -50,6 +57,7 @@
     font-family: "Chakra Petch", serif;
     font-weight: 500;
     font-size: 16px;
+    max-width: 200px;
 }
 
 .project-txt p {
@@ -57,22 +65,7 @@
     font-size: 14px;
 }
 
-.project-img {
-    width: 400px;
-    height: 280px;
-    object-fit: cover;
-    border: 10px solid transparent;
-    margin-right: 20px;
-    border-radius: 8px;
-    background-color: rgba(44, 44, 44, 0.226); 
-    backdrop-filter: blur(5px); 
-    -webkit-backdrop-filter: blur(5px); 
-    box-shadow: 0px 3px 9px 0px black;
-    transition: all 0.3s ease;
-}
-
 .project-img:hover {
-    width: 410px; 
-    height: 290px; 
+    width: 360px; 
+    height: 230px; 
 }
-

@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  cursor: none;
 }
 
 body, html, #root {
@@ -54,4 +55,8 @@ body, html, #root {
 .header-container {
   margin: 10px 0;
   width: 100%;
+}
+
+.App {
+  isolation: isolate;
 }

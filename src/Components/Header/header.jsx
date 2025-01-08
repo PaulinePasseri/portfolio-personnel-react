@@ -34,12 +34,6 @@ export default function Header() {
         }
     }, [activeIndex, navigate, menuItems]);
 
-    const handleWheel = useCallback((event) => {
-        event.preventDefault();
-        const direction = event.deltaY > 0 ? 1 : -1;
-        handleNavigation(direction);
-    }, [handleNavigation]);
-
     const handleKeyDown = useCallback((e) => {
         const isMenuFocused = document.activeElement.closest('nav');
 
@@ -60,13 +54,11 @@ export default function Header() {
     }, [activeIndex, handleNavigation, menuItems, navigate]);
 
     useEffect(() => {
-        window.addEventListener('wheel', handleWheel, { passive: false });
         window.addEventListener('keydown', handleKeyDown);
         return () => {
-            window.removeEventListener('wheel', handleWheel);
             window.removeEventListener('keydown', handleKeyDown);
         };
-    }, [handleWheel, handleKeyDown]);
+    }, [handleKeyDown]);
 
     return (
         <nav>

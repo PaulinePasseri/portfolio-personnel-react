@@ -9,7 +9,7 @@ h1 {
     position: absolute;
     flex-direction: column;
     left: 200px;
-    z-index: 1000;
+    z-index: 20;
     transform: translateX(-100%); 
     transition: opacity 1s ease, transform 1s ease; 
 }
@@ -34,6 +34,7 @@ h1 {
     opacity: 0;
     transform: translateX(100%);
     transition: opacity 1s ease, transform 1s ease;
+    z-index: 10;
 }
 
 .animated-planet.animate {
