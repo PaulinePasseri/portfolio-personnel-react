@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import MenuItem from './MenuItem';
 import './header.css';
@@ -24,34 +24,49 @@ export default function Header() {
         setActiveIndex(currentIndex !== -1 ? currentIndex : menuItems.length - 1);
     }, [location, menuItems]);
 
-    useEffect(() => {
-        const handleKeyDown = (e) => {
-            // Vérifier si le focus est dans le menu pour capturer Tab et Enter
-            const isMenuFocused = document.activeElement.closest('nav');
+    const handleNavigation = useCallback((direction) => {
+        const newIndex = (activeIndex + direction + menuItems.length) % menuItems.length;
+        setActiveIndex(newIndex);
+        if (!menuItems[newIndex].isExternal) {
+            navigate(menuItems[newIndex].path);
+        } else {
+            window.open(menuItems[newIndex].path, '_blank', 'noopener,noreferrer');
+        }
+    }, [activeIndex, navigate, menuItems]);
 
-            if (isMenuFocused) {
-                if (e.key === 'Tab') {
-                    e.preventDefault();
-                    const direction = e.shiftKey ? -1 : 1;
-                    const newIndex = (activeIndex + direction + menuItems.length) % menuItems.length;
-                    setActiveIndex(newIndex);
-                    if (!menuItems[newIndex].isExternal) {
-                        navigate(menuItems[newIndex].path);
-                    }
-                } else if (e.key === 'Enter') {
-                    const currentItem = menuItems[activeIndex];
-                    if (currentItem.isExternal) {
-                        window.open(currentItem.path, '_blank', 'noopener,noreferrer');
-                    } else {
-                        navigate(currentItem.path);
-                    }
+    const handleWheel = useCallback((event) => {
+        event.preventDefault();
+        const direction = event.deltaY > 0 ? 1 : -1;
+        handleNavigation(direction);
+    }, [handleNavigation]);
+
+    const handleKeyDown = useCallback((e) => {
+        const isMenuFocused = document.activeElement.closest('nav');
+
+        if (isMenuFocused) {
+            if (e.key === 'Tab') {
+                e.preventDefault();
+                const direction = e.shiftKey ? -1 : 1;
+                handleNavigation(direction);
+            } else if (e.key === 'Enter') {
+                const currentItem = menuItems[activeIndex];
+                if (currentItem.isExternal) {
+                    window.open(currentItem.path, '_blank', 'noopener,noreferrer');
+                } else {
+                    navigate(currentItem.path);
                 }
             }
-        };
+        }
+    }, [activeIndex, handleNavigation, menuItems, navigate]);
 
+    useEffect(() => {
+        window.addEventListener('wheel', handleWheel, { passive: false });
         window.addEventListener('keydown', handleKeyDown);
-        return () => window.removeEventListener('keydown', handleKeyDown);
-    }, [activeIndex, navigate, menuItems]);
+        return () => {
+            window.removeEventListener('wheel', handleWheel);
+            window.removeEventListener('keydown', handleKeyDown);
+        };
+    }, [handleWheel, handleKeyDown]);
 
     return (
         <nav>
