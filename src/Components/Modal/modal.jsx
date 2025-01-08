@@ -10,8 +10,8 @@ export default function Modal({ isOpen, onClose, project }) {
                 <button className="modal-close" onClick={onClose}>
                     &times;
                 </button>
-                <p>{project.description}</p>
-                <p><strong>Technologies :</strong> {project.competences}</p>
+                <p className='modal-title'><strong>{project.description}</strong></p>
+                <p className='modal-subtext'>{project.details}</p>
                 <a 
                     href={project.githubLink} 
                     target="_blank" 
