@@ -45,7 +45,7 @@ export default function Projects() {
             cover: Cover3,
             description: "Debug d'un site d'une agence d'événementiel",
             details: "Utilisation des tests unitaires et d'intégration ainsi que des Devtools pour debugger une application React.",
-            competences: "REACT",
+            competences: "REACT, DEVTOOLS",
             githubLink: "https://github.com/PaulinePasseri/Debuggez-une-application-React.JS-main.git",
         },
         {
