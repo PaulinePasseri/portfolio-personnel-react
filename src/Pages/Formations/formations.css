@@ -8,7 +8,7 @@
 }
 
 .rocket-img {
-    height: 680px;
+    width: 300px;
     opacity: 0;
     transform: translateY(100%); 
     transition: opacity 1s ease, transform 1s ease; 
@@ -70,22 +70,23 @@
 
     .rocket-img {
         position: absolute;
-        right: calc(50% - 180px);
+        width: 450px;
+        right: calc(50% - 225px);
         z-index: -1;
-        height: calc(100vh - 100px);
     }
     .left-container {
         margin-bottom: 60px;
     }
 }
 
-@media (max-width: 764px) {
+@media (max-width: 768px) {
     .formations-container {
         flex-direction: column;
     }
     .rocket-img {
+        width: 300px;
         position: absolute;
-        right: calc(0% - 180px);
+        right: calc(0% - 150px);
         z-index: -1;
     }
     .left-container h2, .right-container h2 {
