@@ -70,7 +70,7 @@
 
     .rocket-img {
         position: absolute;
-        right: 0%;
+        right: calc(50% - 180px);
         z-index: -1;
         height: calc(100vh - 100px);
     }
@@ -85,7 +85,7 @@
     }
     .rocket-img {
         position: absolute;
-        right: -40%;
+        right: calc(0% - 180px);
         z-index: -1;
     }
     .left-container h2, .right-container h2 {

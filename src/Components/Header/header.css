@@ -31,11 +31,17 @@ nav {
     list-style: none;
     margin: 0;
     padding: 0;
+      
 }
 
 .menu-items li {
     padding: 20px 15px;
     text-transform: uppercase;
+    
+}
+
+.menu-items a {
+    outline: none;      
 }
 
 .menu-link {
@@ -63,7 +69,7 @@ nav {
     text-decoration: none;
 }
 
-.btn-anim:hover, .btn-anim:focus, .btn-anim.active {
+.btn-anim:hover, .btn-anim:focus, .btn-anim.active, .btn-anim:focus-visible {
     background-color: #9a4ae5;  
 }
 
