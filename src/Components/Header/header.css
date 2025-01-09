@@ -69,7 +69,7 @@ nav {
     text-decoration: none;
 }
 
-.btn-anim:hover, .btn-anim:focus, .btn-anim.active, .btn-anim:focus-visible {
+.btn-anim:hover, .btn-anim:focus, .btn-anim.active, .btn-anim:focus-visible, .btn-anim.focused {
     background-color: #9a4ae5;  
 }
 
