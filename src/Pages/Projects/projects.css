@@ -10,6 +10,8 @@
     overflow: hidden;
 }
 
+
+/* Animations d'entrée des projets */
 .project-1 {
     opacity: 0; 
     transform: translate(-100%, -100%); 

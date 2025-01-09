@@ -28,7 +28,6 @@ export default function Header() {
         const newIndex = (activeIndex + direction + menuItems.length) % menuItems.length;
         setActiveIndex(newIndex);
     
-        // Ne navigue pas automatiquement sur un lien externe
         if (!menuItems[newIndex].isExternal) {
             navigate(menuItems[newIndex].path);
         }

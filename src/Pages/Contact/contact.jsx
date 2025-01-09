@@ -7,15 +7,12 @@ export default function Contact() {
     const [isVisible, setIsVisible] = useState(false);
     const location = useLocation();
     const formRef = useRef(null);
-
-    // État pour gérer les données du formulaire
     const [formData, setFormData] = useState({
         name: '',
         email: '',
         message: ''
     });
 
-    // État pour le message de confirmation
     const [confirmationMessage, setConfirmationMessage] = useState('');
 
     useEffect(() => {
@@ -35,27 +32,20 @@ export default function Contact() {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log('Formulaire soumis:', formData);
-
-        // Afficher le message de confirmation
         setConfirmationMessage('Votre message a été envoyé avec succès !');
-
-        // Vider les champs du formulaire
         setFormData({
             name: '',
             email: '',
             message: ''
         });
-
-        // Optionnel : Retirer le message après un certain temps
         setTimeout(() => {
             setConfirmationMessage('');
-        }, 5000); // Masquer le message après 5 secondes
+        }, 5000); 
     };
 
     const handleLastTab = (e) => {
         if (e.key === 'Tab' && !e.shiftKey) {
             e.preventDefault();
-            // Renvoyer le focus au menu
             const menu = document.querySelector('nav a');
             if (menu) menu.focus();
         }
@@ -98,8 +88,6 @@ export default function Contact() {
                 >
                     Envoyer
                 </button>
-
-                {/* Affichage du message de confirmation */}
                 {confirmationMessage && <p className="confirmation-message">{confirmationMessage}</p>}
             </form>
             <img src={Satellite} alt="Satellite" className={`satellite-img ${isVisible ? 'animate' : ''}`} />

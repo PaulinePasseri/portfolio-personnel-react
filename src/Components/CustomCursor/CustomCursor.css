@@ -1,20 +1,20 @@
 .custom-cursor {
     position: fixed;
-    width: 20px; /* Diamètre du cercle */
+    width: 20px; 
     height: 20px;
     backdrop-filter: blur(5px); 
     -webkit-backdrop-filter: blur(5px); 
-    border: 2px solid white; /* Bordure blanche */
-    border-radius: 50%; /* Cercle parfait */
-    background: transparent; /* Transparent */
-    pointer-events: none; /* Empêche les interactions avec le curseur */
-    z-index: 99999999; /* Au-dessus des autres éléments */
+    border: 2px solid white; 
+    border-radius: 50%; 
+    background: transparent; 
+    pointer-events: none; 
+    z-index: 99999999; 
     transform: translate(-50%, -50%);
     transition: transform 0.1s ease-out, width 0.2s ease, height 0.2s ease;
 }
 
 .custom-cursor.clicked {
-    transform: translate(-50%, -50%) scale(0.8); /* Réduit la taille lors d'un clic */
+    transform: translate(-50%, -50%) scale(0.8); 
     transition: transform 0.1s ease-out;
 }
 

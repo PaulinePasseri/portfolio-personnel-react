@@ -19,12 +19,12 @@ export default function Formations() {
 
     return (
         <div className="formations-container">
-            <img src={Rocket} alt="fusée" className={`rocket-img ${isVisible ? 'animate' : ''}`}></img>
             <div className={`left-container ${isVisible ? 'animate' : ''}`}>
                 <h2>Formations</h2>
                 <Formation logo={OC} title="Intégrateur web" paragraph="OpenClassrooms - 9 mois" link="https://openclassrooms.com/fr"/>
                 <Formation logo={Agro} title="Ingénieur en protection des plantes" paragraph="Institut Agro - 5 ans" link="https://www.institut-agro.fr/fr"/>
             </div>
+            <img src={Rocket} alt="fusée" className={`rocket-img ${isVisible ? 'animate' : ''}`}></img>
             <div className={`right-container ${isVisible ? 'animate' : ''}`}>
                 <h2>Experiences</h2>
                 <Formation logo={Agrifeel} title="Technico-commerciale en maraîchage" paragraph="Groupe Terres du Sud - 2 ans" link="https://www.groupe-terresdusud.fr"/>

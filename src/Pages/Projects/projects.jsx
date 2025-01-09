@@ -123,7 +123,7 @@ export default function Projects() {
                         image={project.cover}
                         description={project.description}
                         competences={project.competences}
-                        className={`project project-${index + 1} ${isVisible ? 'animate' : ''}`}
+                        className={`project-${index + 1} ${isVisible ? 'animate' : ''}`}
                         ref={(el) => (projectRefs.current[index] = el)}
                         tabIndex={0} 
                         onClick={() => handleClick(index)}

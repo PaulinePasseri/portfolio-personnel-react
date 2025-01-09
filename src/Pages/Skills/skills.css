@@ -2,13 +2,12 @@
     display: flex;
     align-items: center;
     flex: 1 0 auto;
-    position: relative;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 .astronaut-img {
-    height: 600px;
+    width: 35%;
     animation: rotate 40s linear infinite;
     opacity: 0; 
     transition: opacity 1s ease;
@@ -36,6 +35,7 @@
 .soft-skills-container, .technical-skills-container {
     min-height: 500px;
     max-width: 200px;
+    margin: 30px;
 }
 
 .technical-skills {

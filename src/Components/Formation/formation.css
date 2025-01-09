@@ -40,3 +40,20 @@
     transform: scale(1.05);
     transition: transform 0.3s ease;
 }
+
+/* Responsive */
+
+/* Petits écrans d'ordinateur */
+@media (max-width: 1230px) {
+    .formation-container {
+        width: 320px;
+        margin: 40px;
+    } 
+    .formation-logo {
+        width: 40px;
+        height: 40px;
+    }
+    .formation-text {
+        font-size: 14px;
+    }
+}

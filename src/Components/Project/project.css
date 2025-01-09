@@ -9,7 +9,6 @@
     color: white;
     text-transform: uppercase;
     min-width: 500px;
-    margin-right: 20px;
     position: relative;
 }
 
@@ -89,4 +88,24 @@
 .project-img:hover {
     width: 360px; 
     height: 230px; 
+}
+
+/* Responsive */
+
+/* Petits écrans d'ordinateur */
+@media (max-width: 1230px) {
+    .project-img {
+        width: 300px;
+        height: 180px;
+    }
+    .project-txt, .project-subtitle {
+        font-size: 14px;
+    }
+    .project-txt p:nth-of-type(1) {
+        margin-bottom: 20px;
+    }
+    .project-img:hover {
+        width: 310px; 
+        height: 190px; 
+    }    
 }
