@@ -64,8 +64,7 @@ nav {
 }
 
 .btn-anim:hover, .btn-anim:focus, .btn-anim.active {
-    background-color: rgba(154, 74, 229, 0.2);
-    box-shadow: 0 0 0 2px rgba(154, 74, 229, 0.2);
+    background-color: #9a4ae5;  
 }
 
 /* Menu burger */

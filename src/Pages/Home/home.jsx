@@ -18,7 +18,7 @@ export default function Home() {
                 <h1>Bonjour<br />Je suis Pauline Passeri</h1>
                 <strong className="text-highlight">Développeuse frontend</strong>
             </div>
-            <AnimatedPlanet image={Moon} position={{right:'180px'}} animate={isVisible}/> 
+            <AnimatedPlanet image={Moon} animate={isVisible}/> 
         </div>
     )
 }
