@@ -6,6 +6,18 @@
     justify-content: center;
 }
 
+.skills-container h2 {
+    font-family: Azedo-bold;
+    font-size: 34px;
+    margin-bottom: 30px;
+}
+
+.soft-skills-container, .technical-skills-container {
+    min-height: 500px;
+    max-width: 200px;
+    margin: 30px;
+}
+
 .astronaut-img {
     width: 35%;
     animation: rotate 40s linear infinite;
@@ -17,11 +29,6 @@
     opacity: 1; 
 }
 
-.skills-container h2 {
-    font-family: Azedo-bold;
-    font-size: 34px;
-    margin-bottom: 30px;
-}
 
 @keyframes rotate {
     from {
@@ -30,12 +37,6 @@
     to {
         transform: rotate(360deg);
     }
-}
-
-.soft-skills-container, .technical-skills-container {
-    min-height: 500px;
-    max-width: 200px;
-    margin: 30px;
 }
 
 .technical-skills {
@@ -51,6 +52,7 @@
     margin: 10px;
 }
 
+/* Animations d'entrée */
 @keyframes slideFromTopLeft {
     from {
         transform: translate(-100%, -100%);
@@ -81,4 +83,63 @@
 .soft-skills-container {
     animation: slideFromBottomRight 1s ease-out forwards;
     opacity: 0;
+}
+
+/* Responsive */
+
+/* Tablettes */
+@media (max-width: 1024px) {
+    .skills-container {
+        flex-direction: column; 
+        align-items: center; 
+        padding: 40px; 
+        justify-content: flex-start;
+    }
+    .technical-skills-container, .soft-skills-container {
+        width: 100%; 
+        max-width: none; 
+        margin: 20px 0; 
+        min-height: auto;
+    }
+
+    .technical-skills-container h2, .soft-skills-container h2 {
+        font-size: 34px; 
+        text-align: center;
+    }
+
+    .logo-img {
+        height: 90px; 
+    }
+
+    .astronaut-img {
+        position: absolute;
+        width: 80%;
+        top: 30%;
+    }
+}
+
+/* Mobiles */
+@media (max-width: 768px) {
+    .skills-container {
+        padding: 20px; 
+        justify-content: center;
+    }
+
+    .astronaut-img {
+        display: none; 
+    }
+
+    .technical-skills-container, .soft-skills-container {
+        width: 100%; 
+        max-width: none; 
+    }
+
+    .technical-skills h2, .soft-skills h2 {
+        font-size: 20px; 
+        text-align: center;
+    }
+
+    .logo-img {
+        height: 50px; 
+    }
 }

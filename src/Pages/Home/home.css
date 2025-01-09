@@ -41,3 +41,25 @@ h1 {
     opacity: 1;
     transform: translateX(0);
 }
+
+/* Tablettes */
+@media (max-width: 1024px) {
+    h1, .home-txt {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    h1, .home-txt {
+        text-align: left;
+        margin-left: 5px;
+    }
+
+    h1 {
+        font-size: 38px;
+    }
+
+    .home-txt strong {
+        font-size: 22px;
+    }
+}

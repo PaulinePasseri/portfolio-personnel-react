@@ -121,16 +121,29 @@
         flex-direction: column;
         align-items: center;
     }
+    
+    .project-title {
+        display: none;
+    }
+
     .project-img {
-        width: 100%;
+        width: 80%;
         height: auto;
         margin-right: 0;
         margin-bottom: 20px;
     }
-    .project-txt {
+    
+    .project-txt p {
         max-width: 100%;
+        font-size: 18px;
         text-align: center;
     }
+
+    .project-subtitle {
+        font-size: 20px; 
+        text-align: center;
+    }
+
     .project-img:hover {
         width: 100%;
         height: auto;
@@ -142,18 +155,11 @@
     .project-button {
         width: 95%;
     }
-    .project-title {
-        font-size: 12px;
-        top: -15px;
-    }
     .project-subtitle {
-        font-size: 14px;
-    }
-    .project-txt {
-        font-size: 12px;
+        font-size: 16px;
     }
     .project-txt p {
-        font-size: 12px;
+        font-size: 14px;
     }
     .project-txt p:nth-of-type(1) {
         margin-bottom: 15px;

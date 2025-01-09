@@ -56,6 +56,7 @@
     color: #333;
     border-radius: 5px;
     font-family: Montserrat;
+    font-size: 16px;
 }
 
 .contact-form textarea {
@@ -72,7 +73,8 @@
     cursor: pointer;
     transition: background-color 0.3s;
     font-family: Montserrat;
-    font-size: 14px;
+    font-size: 16px;
+    font-weight: bold;
 }
 
 .contact-form button:hover {
@@ -85,3 +87,80 @@
     transition: ALL 0.3s ease; 
 }
 
+/* Responsive */
+
+/* Tablettes */
+@media (max-width: 1024px) {
+    .contact-form {
+        width: 80%; 
+        max-width: 600px; 
+        padding: 20px; 
+        min-height: 400px; 
+    }
+
+    .contact-form h2 {
+        font-size: 34px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 24px; 
+        height: 40px; 
+        padding: 30px 10px; 
+    }
+
+    .contact-form textarea {
+        height: 120px; 
+    }
+
+    .contact-form button {
+        font-size: 30px; 
+        padding: 30px 10px; 
+    }
+
+    .confirmation-message {
+        font-size: 16px; 
+    }
+    .satellite-img {
+        display: none;
+    }
+}
+
+/* Mobiles */
+@media (max-width: 768px) {
+    .satellite-img {
+        display: none; 
+    }
+
+    .contact-container {
+        align-items: center; 
+        padding: 20px; 
+    }
+
+    .contact-form {
+        width: 100%; 
+        max-width: 400px; 
+        padding: 15px; 
+        min-height: 400px; 
+    }
+
+    .contact-form h2 {
+        font-size: 26px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        height: 40px; 
+        padding: 10px;
+        font-size: 18px;
+    }
+
+    .contact-form textarea {
+        height: 120px;
+    }
+
+    .contact-form button {
+        font-size: 20px; 
+        padding: 10px 10px; 
+    }
+}

@@ -144,8 +144,8 @@ nav {
 }
 
 
-/* Styles pour mobile */
-@media (max-width: 768px) {
+/* Styles pour tablettes et mobiles */
+@media (max-width: 1024px) {
     nav .menu-items {
         display: none;
     }
@@ -182,3 +182,4 @@ nav {
         display: none;
     }
 }
+
