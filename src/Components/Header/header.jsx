@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import ReactDOM from 'react-dom';
 import MenuItem from './MenuItem';
 import './header.css';
 import Logo from '../../Assets/logo.png';
@@ -9,6 +10,11 @@ export default function Header() {
     const location = useLocation();
     const navigate = useNavigate();
     const [activeIndex, setActiveIndex] = useState(-1);
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setMenuOpen(!menuOpen);
+    };
 
     const menuItems = useMemo(() => [
         { text: "Accueil", path: "/" },
@@ -62,18 +68,28 @@ export default function Header() {
     return (
         <nav>
             <img src={Logo} alt="logo portfolio" className="logo" />
-            <ul>
+            <ul className="menu-items">
                 {menuItems.slice(0, -1).map((item, index) => (
-                    <li
-                        key={index}
-                        className={activeIndex === index ? 'active' : ''}
-                    >
-                        <Link
-                            to={item.path}
-                            aria-label={`Aller à ${item.text}`}
-                        >
-                            <MenuItem text={item.text} />
-                        </Link>
+                    <li key={index} className={activeIndex === index ? 'active' : ''}>
+                        {item.isExternal ? (
+                            <a
+                                href={item.path}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label={`Ouvrir ${item.text} dans un nouvel onglet`}
+                                className="menu-link"
+                            >
+                                <MenuItem text={item.text} />
+                            </a>
+                        ) : (
+                            <Link
+                                to={item.path}
+                                aria-label={`Aller à ${item.text}`}
+                                className="menu-link"
+                            >
+                                <MenuItem text={item.text} />
+                            </Link>
+                        )}
                     </li>
                 ))}
             </ul>
@@ -82,10 +98,48 @@ export default function Header() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Ouvrir mon CV dans un nouvel onglet"
-                className={`btn-anim ${activeIndex === menuItems.length - 1 ? 'active' : ''}`}
+                className="btn-anim cv-button"
             >
                 MON CV
             </a>
+            <button className="menu-toggle btn-anim" onClick={toggleMenu}>
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            {ReactDOM.createPortal(
+                <div className={`menu-overlay ${menuOpen ? 'open' : ''}`}>
+                    <button className="close-menu" onClick={() => setMenuOpen(false)}>X</button>
+                    <ul className="menu-items">
+                        {menuItems.map((item, index) => (
+                            <li key={index} className={activeIndex === index ? 'active' : ''}>
+                                {item.isExternal ? (
+                                    <a
+                                        href={item.path}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label={`Ouvrir ${item.text} dans un nouvel onglet`}
+                                        className="menu-link"
+                                        onClick={() => setMenuOpen(false)}
+                                    >
+                                        <MenuItem text={item.text} />
+                                    </a>
+                                ) : (
+                                    <Link
+                                        to={item.path}
+                                        aria-label={`Aller à ${item.text}`}
+                                        className="menu-link"
+                                        onClick={() => setMenuOpen(false)}
+                                    >
+                                        <MenuItem text={item.text} />
+                                    </Link>
+                                )}
+                            </li>
+                        ))}
+                    </ul>
+                </div>,
+                document.body
+            )}
         </nav>
     );
 }

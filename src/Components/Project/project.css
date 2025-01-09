@@ -109,3 +109,53 @@
         height: 190px; 
     }    
 }
+
+/* Tablettes */
+@media (max-width: 1024px) {
+    .project-button {
+        min-width: auto;
+        width: 90%;
+        margin-bottom: 30px;
+    }
+    .project-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    .project-img {
+        width: 100%;
+        height: auto;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    .project-txt {
+        max-width: 100%;
+        text-align: center;
+    }
+    .project-img:hover {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Mobiles */
+@media (max-width: 768px) {
+    .project-button {
+        width: 95%;
+    }
+    .project-title {
+        font-size: 12px;
+        top: -15px;
+    }
+    .project-subtitle {
+        font-size: 14px;
+    }
+    .project-txt {
+        font-size: 12px;
+    }
+    .project-txt p {
+        font-size: 12px;
+    }
+    .project-txt p:nth-of-type(1) {
+        margin-bottom: 15px;
+    }
+}

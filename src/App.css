@@ -50,7 +50,7 @@ body, html, #root {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  overflow: auto;
 }
 
 .header-container {
@@ -60,4 +60,19 @@ body, html, #root {
 
 .App {
   isolation: isolate;
+}
+
+/* Pour les mobiles */
+@media (max-width: 768px) {
+  .main-container {
+      height: 100vh;
+      overflow-y: scroll; 
+      -webkit-overflow-scrolling: touch; /* Momentum scroll sur iOS */
+  }
+
+  .content-container {
+      padding: 10px;
+      height: 100%; 
+      overflow-y: auto;
+  }
 }

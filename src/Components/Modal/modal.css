@@ -105,6 +105,10 @@
     padding: 5px;
 }
 
+.modal-title {
+    text-align: center;
+}
+
 .modal-content p {
     margin-bottom: 10px;
 }
@@ -139,4 +143,92 @@
     background-color: rgba(0, 0, 0, 0.6); 
     border-radius: 5px; 
     margin: 20px 0;
+}
+
+
+/* Tablettes */
+@media (max-width: 1024px) {
+    .modal-content {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .modal-close {
+        font-size: 30px;
+    }
+
+    .modal-close:hover {
+        font-size: 35px;
+    }
+
+    .modal-subtext {
+        font-size: 13px;
+    }
+    .modal-title {
+        margin-top: 30px;
+    }
+}
+
+/* Mobiles */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        padding: 10px;
+        max-height: 90%;
+    }
+
+    .modal-close {
+        font-size: 25px;
+    }
+
+    .modal-close:hover {
+        font-size: 30px;
+    }
+
+    .modal-title {
+        font-size: 16px;
+    }
+
+    .modal-subtext {
+        font-size: 12px;
+    }
+
+    .modal-content a {
+        padding: 8px;
+        font-size: 14px;
+    }
+}
+
+/* Pour les petits appareils mobiles */
+@media (max-width: 500px) {
+    .modal-content {
+        width: 98%;
+        padding: 10px;
+    }
+
+    .modal-close {
+        font-size: 24px;
+    }
+
+    .modal-close:hover {
+        font-size: 28px;
+    }
+
+    .modal-title {
+        font-size: 16px;
+    }
+
+    .modal-subtext {
+        font-size: 12px;
+    }
+
+    .modal-content a {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .modal-content img {
+        margin-top: 10px;
+        width: 400px;
+    }
 }

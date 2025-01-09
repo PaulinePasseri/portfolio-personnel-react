@@ -4,10 +4,11 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    align-items: center;
+    align-items: center; 
     width: 100%;
-    position: relative;
-    overflow: hidden;
+    overflow-y: auto; 
+    padding: 20px;
+
 }
 
 
@@ -54,4 +55,51 @@
 .project-4.animate {
     opacity: 1;
     transform: translate(0);
+}
+
+/* Responsive */
+
+/* Petits écrans d'ordinateur */
+@media (max-width: 1230px) {
+    .projects-container {
+        justify-content: center;
+        padding-top: 10px;
+    }
+}
+
+/* Tablettes */
+@media (max-width: 1024px) {
+    .projects-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Ajustez la taille des projets si nécessaire */
+    .project-1, .project-2, .project-3, .project-4 {
+        width: 80%; /* ou une autre valeur appropriée */
+        margin-bottom: 20px; /* Espace entre les projets */
+    }
+}
+
+/* Mobiles */
+@media (max-width: 768px) {
+    .projects-container {
+        padding: 20px 10px;
+        height: auto;
+    }
+
+    .project-1, .project-2, .project-3, .project-4 {
+        width: 95%; /* Presque toute la largeur de l'écran */
+        margin-bottom: 15px;
+    }
+
+    /* Ajustez les animations pour les mobiles si nécessaire */
+    .project-1, .project-2, .project-3, .project-4 {
+        transform: translateY(50px);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .project-1.animate, .project-2.animate, .project-3.animate, .project-4.animate {
+        transform: translateY(0);
+    }
 }

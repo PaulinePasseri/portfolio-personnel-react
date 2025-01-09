@@ -5,30 +5,44 @@ import './CustomCursor.css';
 const CustomCursor = () => {
     const [position, setPosition] = useState({ x: 0, y: 0 });
     const [isClicked, setIsClicked] = useState(false);
+    const [isTouchDevice, setIsTouchDevice] = useState(false);
 
     useEffect(() => {
-        const handleMouseMove = (e) => {
-            setPosition({ x: e.clientX, y: e.clientY });
+        // Vérifier si c'est un appareil tactile
+        const checkTouchDevice = () => {
+            setIsTouchDevice('ontouchstart' in window || navigator.maxTouchPoints > 0);
         };
 
-        const handleMouseDown = () => {
-            setIsClicked(true);
-        };
+        checkTouchDevice();
+        window.addEventListener('resize', checkTouchDevice);
 
-        const handleMouseUp = () => {
-            setIsClicked(false);
-        };
+        if (!isTouchDevice) {
+            const handleMouseMove = (e) => {
+                setPosition({ x: e.clientX, y: e.clientY });
+            };
 
-        document.addEventListener('mousemove', handleMouseMove);
-        document.addEventListener('mousedown', handleMouseDown);
-        document.addEventListener('mouseup', handleMouseUp);
+            const handleMouseDown = () => {
+                setIsClicked(true);
+            };
 
-        return () => {
-            document.removeEventListener('mousemove', handleMouseMove);
-            document.removeEventListener('mousedown', handleMouseDown);
-            document.removeEventListener('mouseup', handleMouseUp);
-        };
-    }, []);
+            const handleMouseUp = () => {
+                setIsClicked(false);
+            };
+
+            document.addEventListener('mousemove', handleMouseMove);
+            document.addEventListener('mousedown', handleMouseDown);
+            document.addEventListener('mouseup', handleMouseUp);
+
+            return () => {
+                document.removeEventListener('mousemove', handleMouseMove);
+                document.removeEventListener('mousedown', handleMouseDown);
+                document.removeEventListener('mouseup', handleMouseUp);
+                window.removeEventListener('resize', checkTouchDevice);
+            };
+        }
+    }, [isTouchDevice]);
+
+    if (isTouchDevice) return null;
 
     return ReactDOM.createPortal(
         <div
