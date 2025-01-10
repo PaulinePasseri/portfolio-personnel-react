@@ -35,13 +35,14 @@ nav {
 }
 
 .menu-items li {
-    padding: 20px 15px;
+    
     text-transform: uppercase;
     
 }
 
 .menu-items a {
-    outline: none;      
+    outline: none;  
+    padding: 20px 15px;    
 }
 
 .menu-link {

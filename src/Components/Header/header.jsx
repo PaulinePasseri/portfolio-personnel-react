@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import MenuItem from './MenuItem';
 import './header.css';
-import Logo from '../../Assets/logo.png';
+import Logo from '../../Assets/logo.webp';
 import CV from '../../Assets/CV-PP.pdf';
 
 export default function Header() {
@@ -98,7 +98,7 @@ export default function Header() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Ouvrir mon CV dans un nouvel onglet"
-                className="btn-anim cv-button"
+                className={`btn-anim cv-button ${activeIndex === menuItems.length - 1 ? 'active' : ''}`}
             >
                 MON CV
             </a>

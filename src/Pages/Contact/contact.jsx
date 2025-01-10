@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import Satellite from '../../Assets/satellite.png';
+import Satellite from '../../Assets/satellite.webp';
 import './contact.css';
 import { useLocation } from 'react-router-dom';
 

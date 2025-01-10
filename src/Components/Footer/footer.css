@@ -5,16 +5,17 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    padding-bottom: 15px;
 }
 
 .footer-container p {
-    font-size: 13px;
+    font-size: 15px;
     margin-right: 10px;
 }
 
 .icons a {
     margin-right: 10px;
-    font-size: 20px;
+    font-size: 24px;
 }
 
 i {
@@ -24,4 +25,14 @@ i {
 
 i:hover {
     color: #9a4ae5;
+}
+
+@media (max-width: 768px) {
+    .footer-container p {
+        font-size: 13px;
+    }
+
+    .icons a {
+        font-size: 20px;
+    }
 }

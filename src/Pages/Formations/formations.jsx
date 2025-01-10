@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import Rocket from '../../Assets/rocket.png'
+import Rocket from '../../Assets/rocket.webp'
 import './formations.css'
 import Formation from '../../Components/Formation/formation'
-import OC from '../../Assets/Logos/oc-logo.png'
-import Agro from '../../Assets/Logos/agro-logo.png'
-import Agrifeel from '../../Assets/Logos/agrifeel-logo.png'
-import Koppert from '../../Assets/Logos/koppert-logo.png'
+import OC from '../../Assets/Logos/oc-logo.webp'
+import Agro from '../../Assets/Logos/agro-logo.webp'
+import Agrifeel from '../../Assets/Logos/agrifeel-logo.webp'
+import Koppert from '../../Assets/Logos/koppert-logo.webp'
 import { useLocation } from 'react-router-dom';
 
 export default function Formations() {

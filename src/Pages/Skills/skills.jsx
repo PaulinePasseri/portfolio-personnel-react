@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import Astronaut from '../../Assets/astronaut.png'
+import Astronaut from '../../Assets/astronaut.webp'
 import './skills.css'
 import Skill from '../../Components/Skill/skill'
 import HTML from '../../Assets/Logos/html-logo.webp'
-import CSS from '../../Assets/Logos/css-logo.png'
-import REACT from '../../Assets/Logos/react-logo.png'
-import JS from '../../Assets/Logos/javascript-logo.png'
+import CSS from '../../Assets/Logos/css-logo.webp'
+import REACT from '../../Assets/Logos/react-logo.webp'
+import JS from '../../Assets/Logos/javascript-logo.webp'
 
 export default function Skills() {
     const [isVisible, setIsVisible] = useState(false);

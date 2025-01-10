@@ -24,11 +24,17 @@ h1 {
 }
 
 .home-bio {
-    max-width: 600px;
+    max-width: 660px;
     text-align: justify;
     margin-top: 10px;
     font-size: 18px;
 }
+
+.email {
+    text-align: right;
+    font-size: 16px;
+}
+
 
 .home-container {
     display: flex;
