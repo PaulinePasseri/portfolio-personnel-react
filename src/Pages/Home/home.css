@@ -23,6 +23,13 @@ h1 {
     font-size: 30px;
 }
 
+.home-bio {
+    max-width: 600px;
+    text-align: justify;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
 .home-container {
     display: flex;
     align-items: center;
@@ -50,6 +57,10 @@ h1 {
         left: calc(50% - 20rem);
     }
 
+    h1 {
+        font-size: 44px;
+    }
+
     .home-txt {
         background-color: rgba(44, 44, 44, 0.226); 
         backdrop-filter: blur(5px); 
@@ -58,6 +69,12 @@ h1 {
         width: 100%;
         padding: 10px 10px 10px 50px;
         left: 0;
+        text-align: center;
+    }
+
+    .home-bio {
+        margin: 10px auto;
+        font-size: 18px;
     }
     
 }
@@ -74,16 +91,21 @@ h1 {
         -webkit-backdrop-filter: blur(5px); 
         box-shadow: 0px 3px 9px 0px black;
         width: 100%;
-        padding: 10px;
-        
+        padding: 10px; 
+        text-align: left;
+    }
+
+    .home-bio {
+        margin-top: 10px;
+        font-size: 16px;
     }
 
     h1 {
-        font-size: 38px;
+        font-size: 26px;
     }
 
     .home-txt strong {
-        font-size: 22px;
+        font-size: 20px;
     }
     
     .animated-planet {
