@@ -3,14 +3,14 @@ import { useLocation } from 'react-router-dom';
 import './projects.css';
 import Project from '../../Components/Project/project';
 import Modal from '../../Components/Modal/modal';
-import Projet1 from '../../Assets/Projects/projet-sophiebluel.png';
-import Projet2 from '../../Assets/Projects/projet-ninacarducci.png';
-import Projet3 from '../../Assets/Projects/projet-724events.png';
-import Projet4 from '../../Assets/Projects/projet-kasa.png';
-import Cover1 from '../../Assets/Projects/projet-sophiebluel2.png';
-import Cover2 from '../../Assets/Projects/projet-ninacarducci2.png';
-import Cover3 from '../../Assets/Projects/projet-724events2.png';
-import Cover4 from '../../Assets/Projects/projet-kasa2.png';
+import Projet1 from '../../Assets/Projects/projet-sophiebluel.webp';
+import Projet2 from '../../Assets/Projects/projet-ninacarducci.webp';
+import Projet3 from '../../Assets/Projects/projet-724events.webp';
+import Projet4 from '../../Assets/Projects/projet-kasa.webp';
+import Cover1 from '../../Assets/Projects/projet-sophiebluel2.webp';
+import Cover2 from '../../Assets/Projects/projet-ninacarducci2.webp';
+import Cover3 from '../../Assets/Projects/projet-724events2.webp';
+import Cover4 from '../../Assets/Projects/projet-kasa2.webp';
 
 export default function Projects() {
     const [isVisible, setIsVisible] = useState(false);
