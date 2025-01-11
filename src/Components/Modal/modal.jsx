@@ -1,8 +1,23 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import './modal.css';
 
 export default function Modal({ isOpen, onClose, project }) {
+    const linkRef = useRef(null);
+
+    useEffect(() => {
+        if (isOpen && linkRef.current) {
+            linkRef.current.focus();
+        }
+    }, [isOpen]);
+
     if (!isOpen) return null;
+
+    const handleKeyDown = (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            window.open(project.githubLink, '_blank', 'noopener,noreferrer');
+        }
+    };
 
     return (
         <div className="modal-overlay" onClick={onClose}>
@@ -17,6 +32,9 @@ export default function Modal({ isOpen, onClose, project }) {
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="modal-github-link"
+                    ref={linkRef}
+                    onKeyDown={handleKeyDown}
+                    tabIndex={0}
                 >
                     <span>Voir sur Github</span>
                 </a>
