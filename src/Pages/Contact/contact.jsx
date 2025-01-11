@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import emailjs from '@emailjs/browser';
 import Satellite from '../../Assets/satellite.webp';
 import './contact.css';
 import { useLocation } from 'react-router-dom';
@@ -10,7 +11,6 @@ export default function Contact() {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
-        subject: '',
         message: ''
     });
 
@@ -30,29 +30,27 @@ export default function Contact() {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = async(e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log('Formulaire soumis:', formData);
-        setConfirmationMessage('Votre message a été envoyé avec succès !');
-        setFormData({
-            name: '',
-            email: '',
-            subject: '',
-            message: ''
-        });
-
-        const response = await fetch("http://146.59.242.125:3007/sendmail", {
-            method: "POST",
-            headers: {
-                "Content-Type": "Application/json"
-            },
-            body: JSON.stringify(formData)
-        })
-        if (!response.ok) {
-            setConfirmationMessage ('Il y a une erreur dans le formulaire.')
-        } else (
-            setConfirmationMessage ('Email envoyé avec succès !')
+        
+        emailjs.send(
+            'service_contact',
+            'template_zvlk15m',
+            formData,
+            'ulYgtlVKtZuYr0ybW'
         )
+        .then((result) => {
+            console.log('Email envoyé avec succès:', result.text);
+            setConfirmationMessage('Votre message a été envoyé avec succès !');
+            setFormData({
+                name: '',
+                email: '',
+                message: ''
+            });
+        }, (error) => {
+            console.log('Erreur lors de l\'envoi de l\'email:', error.text);
+            setConfirmationMessage('Il y a eu une erreur lors de l\'envoi du message. Veuillez réessayer.');
+        });
     };
 
     const handleLastTab = (e) => {
@@ -84,14 +82,6 @@ export default function Contact() {
                     name="email"
                     placeholder="Votre email"
                     value={formData.email}
-                    onChange={handleChange}
-                    required
-                />
-                <input
-                    type="text"
-                    name="subject"
-                    placeholder="Votre objet"
-                    value={formData.subject}
                     onChange={handleChange}
                     required
                 />

@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@tsparticles/all": "^3.7.1",
     "@tsparticles/react": "^3.0.0",
     "cra-template": "1.2.0",
