@@ -5,14 +5,27 @@ export default function Modal({ isOpen, onClose, project }) {
     const linkRef = useRef(null);
 
     useEffect(() => {
-        if (isOpen && linkRef.current) {
-            linkRef.current.focus();
+        const handleKeyDown = (e) => {
+            if (e.key === 'Escape') {
+                onClose();
+            }
+        };
+
+        if (isOpen) {
+            document.addEventListener('keydown', handleKeyDown);
+            if (linkRef.current) {
+                linkRef.current.focus();
+            }
         }
-    }, [isOpen]);
+
+        return () => {
+            document.removeEventListener('keydown', handleKeyDown);
+        };
+    }, [isOpen, onClose]);
 
     if (!isOpen) return null;
 
-    const handleKeyDown = (e) => {
+    const handleLinkKeyDown = (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
             window.open(project.githubLink, '_blank', 'noopener,noreferrer');
@@ -25,15 +38,15 @@ export default function Modal({ isOpen, onClose, project }) {
                 <button className="modal-close" onClick={onClose}>
                     &times;
                 </button>
-                <p className='modal-title'><strong>{project.description}</strong></p>
-                <p className='modal-subtext'>{project.details}</p>
+                <p className="modal-title"><strong>{project.description}</strong></p>
+                <p className="modal-subtext">{project.details}</p>
                 <a 
                     href={project.githubLink} 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="modal-github-link"
                     ref={linkRef}
-                    onKeyDown={handleKeyDown}
+                    onKeyDown={handleLinkKeyDown}
                     tabIndex={0}
                 >
                     <span>Voir sur Github</span>
