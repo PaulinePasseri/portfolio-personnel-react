@@ -70,8 +70,8 @@
 
     .rocket-img {
         position: absolute;
-        width: 450px;
-        right: calc(50% - 225px);
+        width: 300px;
+        right: calc(50% - 150px);
         z-index: -1;
     }
     .left-container {

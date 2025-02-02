@@ -10,6 +10,7 @@
     text-transform: uppercase;
     min-width: 500px;
     position: relative;
+    cursor: pointer;
 }
 
 .project-title {
