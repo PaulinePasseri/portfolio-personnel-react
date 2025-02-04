@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import MenuItem from './MenuItem';
 import './header.css';
 import Logo from '../../Assets/logo.webp';
-import CV from '../../Assets/CV-PAULINE-PASSERI.pdf';
+import CV from '../../Assets/CV-PAULINE-PASSERI-FR.pdf';
 
 export default function Header() {
     const location = useLocation();
