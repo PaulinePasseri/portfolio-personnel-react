@@ -10,11 +10,12 @@
     font-family: Azedo-bold;
     font-size: 34px;
     margin-bottom: 30px;
+    text-align: center;
 }
 
 .soft-skills-container, .technical-skills-container {
     min-height: 500px;
-    max-width: 200px;
+    max-width: 400px;
     margin: 30px;
 }
 
@@ -45,11 +46,6 @@
     flex-wrap: wrap;
     justify-content: center;
 
-}
-
-.logo-img {
-    height: 80px;
-    margin: 10px;
 }
 
 /* Animations d'entrée */
