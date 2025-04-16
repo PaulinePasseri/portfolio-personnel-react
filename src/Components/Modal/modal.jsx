@@ -28,7 +28,7 @@ export default function Modal({ isOpen, onClose, project }) {
     const handleLinkKeyDown = (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
-            window.open(project.githubLink, '_blank', 'noopener,noreferrer');
+            window.open(project.vercelLink, '_blank', 'noopener,noreferrer');
         }
     };
 
@@ -41,7 +41,7 @@ export default function Modal({ isOpen, onClose, project }) {
                 <p className="modal-title"><strong>{project.description}</strong></p>
                 <p className="modal-subtext">{project.details}</p>
                 <a 
-                    href={project.githubLink} 
+                    href={project.vercelLink} 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="modal-github-link"
@@ -49,7 +49,7 @@ export default function Modal({ isOpen, onClose, project }) {
                     onKeyDown={handleLinkKeyDown}
                     tabIndex={0}
                 >
-                    <span>Voir sur Github</span>
+                    <span>Voir sur Vercel</span>
                 </a>
                 <img src={project.image} alt={project.title} />
             </div>

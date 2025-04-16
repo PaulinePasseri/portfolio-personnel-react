@@ -6,7 +6,7 @@ import Modal from '../../Components/Modal/modal';
 import Projet1 from '../../Assets/Projects/projet-sophiebluel.webp';
 import Projet2 from '../../Assets/Projects/projet-ninacarducci.webp';
 import Projet3 from '../../Assets/Projects/projet-724events.webp';
-import Projet4 from '../../Assets/Projects/projet-kasa.webp';
+import Projet4 from '../../Assets/Projects/projet-tickethack.png';
 import Cover1 from '../../Assets/Projects/projet-sophiebluel2.webp';
 import Cover2 from '../../Assets/Projects/projet-ninacarducci2.webp';
 import Cover3 from '../../Assets/Projects/projet-724events2.webp';
@@ -27,8 +27,8 @@ export default function Projects() {
             cover: Cover1,
             description: "Création d'une page web dynamique pour une architecte",
             details: "Utilisation d'une API pour gérer et filter les projets, la connexion de l'utilisateur et la persistance des données.",
-            competences: "JAVASCRIPT, API",
-            githubLink: "https://github.com/PaulinePasseri/P6.git",
+            competences: "JAVASCRIPT",
+            vercelLink: "https://github.com/PaulinePasseri/P6.git",
         },
         {
             title: "[002]",
@@ -37,7 +37,7 @@ export default function Projects() {
             description: "Optimisation du référencement d'un site de photographe",
             details: "Utilisation de Lighthouse et WAVE pour optimiser la performance, le SEO, les bonnes pratiques et l'accessibilité du site.",
             competences: "SEO, ACCESSIBILITE",
-            githubLink: "https://github.com/PaulinePasseri/ninacarducci.git",
+            vercelLink: "https://github.com/PaulinePasseri/ninacarducci.git",
         },
         {
             title: "[003]",
@@ -46,16 +46,16 @@ export default function Projects() {
             description: "Debug d'un site d'une agence d'événementiel",
             details: "Utilisation des tests unitaires et d'intégration ainsi que des Devtools pour debugger une application React.",
             competences: "REACT, DEVTOOLS",
-            githubLink: "https://github.com/PaulinePasseri/Debuggez-une-application-React.JS-main.git",
+            vercelLink: "https://github.com/PaulinePasseri/Debuggez-une-application-React.JS-main.git",
         },
         {
             title: "[004]",
             image: Projet4,
             cover: Cover4,
-            description: "Application de location immobilière",
-            details: "Utilisation de React pour gérer l'application en composants réutilisables et les lier via des props.",
-            competences: "SASS, REACT",
-            githubLink: "https://github.com/PaulinePasseri/kasa.git",
+            description: "Application de réservation de billets de train",
+            details: "Utilisation de NodeJs, Express et Javascript pour créer des routes vers une base de données noSQL et intégration du frontend",
+            competences: "NODEJS, EXPRESS, JAVASCRIPT",
+            vercelLink: "https://tickethack-frontend-tau.vercel.app"
         },
     ];
 
