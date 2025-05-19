@@ -8,7 +8,7 @@
 }
 
 .rocket-img {
-    width: 300px;
+    width: 250px;
     opacity: 0;
     transform: translateY(100%); 
     transition: opacity 1s ease, transform 1s ease; 
@@ -56,6 +56,9 @@
     .left-container h2, .right-container h2 {
         font-size: 28px;
     }
+    .rocket-img {
+        width: 300px;
+    }
 }
 
 @media (max-width: 1024px) {
@@ -70,7 +73,7 @@
 
     .rocket-img {
         position: absolute;
-        width: 300px;
+        width: 250px;
         right: calc(50% - 150px);
         z-index: -1;
     }
